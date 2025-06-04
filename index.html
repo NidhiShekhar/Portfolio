@@ -1,197 +1,186 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nidhi Shekhar - Computer Science Engineer </title>
 
-	<!--/ /---- Put your name in the title of the page ----/ /-->
-	<title>Put Your Name Here</title>
-	
-	<!--/ /-------- Normalize CSS --------/ /-->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-	
-	<!--/ /-------- Google Fonts --------/ /-->
-	<!-- Add a link to google fonts here if you want them -->
-	
-	<!--/ /-------- Font Awesome --------/ /-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!-- Normalize CSS for cross-browser consistency -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-	<!--/ /-------- Your Styles --------/ /-->
-	<link href="styles.css" rel="stylesheet">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-	<!--/ /---Put a short description for your site below. 20 words or less---/ /-->
-	<meta description="A short description for your site...">
-
-	<!--/ /-------- Needed For Mobile Devices --------/ /-->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-	
-    <!-- ------------------------------------------------------
-    The site is designed to be mobile first. The wrapper elements
-	are in place for when you get to desktop size to contain the 
-	content.
-    ------------------------------------------------------- -->
-    
-	<header class="primary">
-        <div class="wrapper">
-            
-			<div class="logo-container">
-				<h1>Your<br>Name<br>Portfolio</h1>
+<!-- Floating decorative elements -->
+<div class="floating-hearts">
+	<div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
+	<div class="heart" style="left: 20%; animation-delay: 1s;">🌸</div>
+	<div class="heart" style="left: 30%; animation-delay: 2s;">✨</div>
+	<div class="heart" style="left: 40%; animation-delay: 3s;">🌿</div>
+	<div class="heart" style="left: 50%; animation-delay: 4s;">💖</div>
+	<div class="heart" style="left: 60%; animation-delay: 5s;">🌸</div>
+	<div class="heart" style="left: 70%; animation-delay: 1.5s;">✨</div>
+	<div class="heart" style="left: 80%; animation-delay: 2.5s;">🌿</div>
+	<div class="heart" style="left: 90%; animation-delay: 3.5s;">💖</div>
+</div>
 
-				<!-- ------------------------------------------------------
-				Note that the image of the logo is linked to the home page.
-				------------------------------------------------------- -->
-				<a href="index.html"><img src="https://dummyimage.com/175/c4c4c4/fff&text=logo" alt="logo image" id="logo"></a>
+<!-- Navigation -->
+<nav>
+	<div class="nav-container">
+		<a href="#" class="logo">🌸 Nidhi Shekhar</a>
+		<ul class="nav-links">
+			<li><a href="#about">About</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#research">Research</a></li>
+			<li><a href="#hobbies">Hobbies</a></li>
+			<li><a href="#blog">Blog</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</div>
+</nav>
+
+<!-- Main content -->
+<main>
+	<div class="container">
+		<!-- Hero section -->
+		<section class="hero" id="about">
+			<h1>Hello, I'm Nidhi !</h1>
+			<p>Computer Science undergraduate passionate about creating beautiful, functional solutions. Welcome to my little corner of the digital world!</p>
+			<a href="#projects" class="cta-button">Explore My Work ✨</a>
+		</section>
+
+		<!-- Projects section -->
+		<section class="section" id="projects">
+			<h2 class="section-title">🚀 My Projects</h2>
+			<div class="cards-grid">
+				<div class="card">
+					<h3>🌟 Project Aurora</h3>
+					<p>A beautiful web application built with React and Node.js that helps users track their daily habits with gamification elements inspired by farming games.</p>
+					<div class="card-tags">
+						<span class="tag">React</span>
+						<span class="tag">Node.js</span>
+						<span class="tag">MongoDB</span>
+					</div>
+				</div>
+				<div class="card">
+					<h3>🎮 Pixel Adventures</h3>
+					<p>A 2D platformer game developed in Unity with custom pixel art and engaging gameplay mechanics. Features multiple levels and power-ups.</p>
+					<div class="card-tags">
+						<span class="tag">Unity</span>
+						<span class="tag">C#</span>
+						<span class="tag">Game Design</span>
+					</div>
+				</div>
+				<div class="card">
+					<h3>📱 Campus Connect</h3>
+					<p>Mobile app connecting students for study groups and events. Built with Flutter and Firebase, serving over 500 active users.</p>
+					<div class="card-tags">
+						<span class="tag">Flutter</span>
+						<span class="tag">Firebase</span>
+						<span class="tag">Dart</span>
+					</div>
+				</div>
 			</div>
-            
-            
-			<!-- ------------------------------------------------------
-            The navigation here is linking to the sections further down
-            the page.
-            ------------------------------------------------------- -->
-			<nav id="mainnav">
-            	<ul>
-                	<li><a href="#work">Work</a></li>
-                    <li><a href="#about-contact">About</a></li>
-                    <li><a href="#about-contact">Contact</a></li>
-                </ul>
-            </nav>
-            
-        </div>
-        
-    </header>
-    
-    <!-- ------------------------------------------------------
-    This is the work section, which has two parts: the featured
-	section and the projects section.
-    ------------------------------------------------------- -->
-    
-    <section id="work">
-   		<div class="wrapper">
-        	<h2>Check Out My Best Projects</h2>
-        	<section class="featured">
-                <article>
-                	<!-- ------------------------------------------------------
-                    Link the image below to the detail page for this project.
-                    Use the page.html file to make that page. Also link the 
-                    anchor tag in the paragraph below to the same page.
-                    ------------------------------------------------------- -->
-                	<a href="#"><img src="https://dummyimage.com/510x300/c4c4c4/fff&text=Featured+Project" alt="image"></a>
-                </article>
-                
-                <article>
-                	<h3>Title of Project</h3>
-                    <h4>Challenge Statement</h4>
-                    <p>Before they sold out single-origin coffee fingerstache sartorial freegan master cleanse. Sartorial blog fap, shoreditch scenester tacos poutine. Bespoke brunch viral listicle, keffiyeh celiac paleo organic scenester next level cliche put a bird on it cardigan. Forage kombucha pitchfork literally. Art party narwhal food truck selfies, XOXO leggings distillery four loko fap. An additional sentence.</p> <p><a href="#">Find out how I solved this problem</a></p> 
-                </article>
-            </section> <!-- end row -->
-            
-            
-            <!-- ------------------------------------------------------
-            The projects section is for additional projects. I put four in
-			here, but it could be more, or less. You just have to pay
-			attention to how they wrap, and how many you want per row.
-            
-            Note that each image should be linked to the page with more
-            detailed information about that project. You can use a copy of
-            page.html to create those pages.
-            ------------------------------------------------------- -->
-            
-            <section class="projects">
-            
-            	<article>
-                	<h3>Project Title</h3>
-                	<a href="#"><img src="https://dummyimage.com/340x200/c4c4c4/fff&text=Another+Project" alt="image"></a>
-                    <p><strong>Role:</strong> Designer</p>
-                    <p><strong>Description:</strong> Website for a restaurant and redesigned the online menu.</p>
-                </article>
-                
-                <article>
-                	<h3>Project Title</h3>
-                	<a href="#"><img src="https://dummyimage.com/340x200/c4c4c4/fff&text=Another+Project" alt="image"></a>
-                    <p><strong>Role:</strong> Designer</p>
-                    <p><strong>Description:</strong> Website for a restaurant and redesigned the online menu.</p>
-                </article>
-                
-                <article>
-                	<h3>Project Title</h3>
-                	<a href="#"><img src="https://dummyimage.com/340x200/c4c4c4/fff&text=Another+Project" alt="image"></a>
-                    <p><strong>Role:</strong> Designer</p>
-                    <p><strong>Description:</strong> Website for a restaurant and redesigned the online menu.</p>
-                </article>
-				
-				<article>
-                	<h3>Project Title</h3>
-                	<a href="#"><img src="https://dummyimage.com/340x200/c4c4c4/fff&text=Another+Project" alt="image"></a>
-                    <p><strong>Role:</strong> Designer</p>
-                    <p><strong>Description:</strong> Website for a restaurant for goats.</p>
-                </article>
-            
-            </section><!-- end row -->
-            
-        </div> <!-- end work wrapper -->
-    </section>
-    
-    
-    <!-- ------------------------------------------------------
-    This is the about and contact section. The links in the main
-    navigation link to this section. 
-    ------------------------------------------------------- -->
-    
-    <section id="about-contact" class="secondary">
-   		<div class="wrapper">
-        	
-			<div class="profile-photo">
-            	<img src="https://eansmfdexeghfvxgftcl.supabase.co/storage/v1/object/public/CatStuff/portfolio%20picture" alt="image">
-            </div>
-			
-            <article>
-				<h2>About Me</h2>
-				<p>The GOAT, father of 3, fender owner, reclaimed wood collector and Goatscripter. Acting at the junction of minimalism and intellectual purity to create great work for living breathing GOATS. I'm a designer and this is my work.</p>
-				<h3>Skills</h3>
-				<p>I am particularly good at BLAH BLAH and really enjoy BLAH. I am currently learning BLAH and I'm very exited about BLAH BLAH.</p>
-			</article> 
-                
-			<article>
-				<h2>Contact Me!</h2>
-				<p>I am currently looking for opportunities to work on a team at a design shop. Please feel free to contact me by phone, email or through the usual social media channels.</p>
+		</section>
 
-				<!-- ------------------------------------------------------
-				Be sure to encode your email address at this site, so you 
-				don't get spam. http://wbwip.com/wbw/emailencoder.html
-				------------------------------------------------------- -->
+		<!-- Research section -->
+		<section class="section" id="research">
+			<h2 class="section-title">🔬 Research Work</h2>
+			<div class="cards-grid">
+				<div class="card research-card">
+					<h3>🤖 Machine Learning in Healthcare</h3>
+					<p>Developing predictive models for early disease detection using deep learning techniques. Collaborating with the university's medical research team.</p>
+					<div class="card-tags">
+						<span class="tag">Python</span>
+						<span class="tag">TensorFlow</span>
+						<span class="tag">Healthcare AI</span>
+					</div>
+				</div>
+				<div class="card research-card">
+					<h3>🌐 Sustainable Computing</h3>
+					<p>Research on energy-efficient algorithms and their impact on reducing computational carbon footprint. Published in undergraduate research symposium.</p>
+					<div class="card-tags">
+						<span class="tag">Sustainability</span>
+						<span class="tag">Algorithms</span>
+						<span class="tag">Research</span>
+					</div>
+				</div>
+			</div>
+		</section>
 
-				<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:&#101;&#109;&#097;&#105;&#108;&#064;&#115;&#111;&#109;&#101;&#119;&#104;&#101;&#114;&#101;&#046;&#099;&#111;&#109;">&#101;&#109;&#097;&#105;&#108;&#064;&#115;&#111;&#109;&#101;&#119;&#104;&#101;&#114;&#101;&#046;&#099;&#111;&#109;</a><br>
-				<i class="fa fa-phone" aria-hidden="true"></i> 123-456-7890</p>
+		<!-- Hobbies section -->
+		<section class="section" id="hobbies">
+			<h2 class="section-title">🌈 My Hobbies</h2>
+			<div class="hobbies-grid">
+				<div class="hobby-card">
+					<div class="hobby-icon">🎨</div>
+					<h3>Digital Art</h3>
+					<p>Creating pixel art and illustrations, especially character designs for games</p>
+				</div>
+				<div class="hobby-card">
+					<div class="hobby-icon">🌱</div>
+					<h3>Gardening</h3>
+					<p>Growing herbs and flowers, just like in Stardew Valley!</p>
+				</div>
+				<div class="hobby-card">
+					<div class="hobby-icon">📚</div>
+					<h3>Reading</h3>
+					<p>Fantasy novels and tech blogs are my go-to reading materials</p>
+				</div>
+				<div class="hobby-card">
+					<div class="hobby-icon">🎮</div>
+					<h3>Gaming</h3>
+					<p>Indie games, farming sims, and puzzle games are my favorites</p>
+				</div>
+			</div>
+		</section>
 
-				<!-- ------------------------------------------------------
-				You can see here that I have included font-awesome. It is used
-				to create the icons above and below. You can go to the font-awesome
-				website to see the available icons and swap some out.
-				------------------------------------------------------- -->
-
-				<p class="social">
-					<a href="#"><i class="fab fa-facebook"></i></a>
-					<a href="#"><i class="fab fa-linkedin"></i></a> 
-					<a href="#"><i class="fab fa-twitter-square"></i></a>
+		<!-- Blog section -->
+		<section class="section" id="blog">
+			<h2 class="section-title">📝 Blog & Thoughts</h2>
+			<div class="blog-preview">
+				<h3>Coming Soon! ✨</h3>
+				<p>I'm planning to start a blog where I'll share my thoughts on technology, coding adventures, research insights, and maybe some life updates. Stay tuned for interesting content about the intersection of technology and creativity!</p>
+				<p style="margin-top: 1rem; font-style: italic; color: var(--pink-dark);">
+					Topics I'm excited to write about: Web development tips, AI ethics, sustainable tech, and my journey as a CS student! 🌸
 				</p>
-			</article>
-                   
-        </div>
-    </section>
-    
-    
-    <!-- ------------------------------------------------------
-    The footer section is not doing much on this page. Add more
-    content if necessary.
-    ------------------------------------------------------- -->
-    <footer class="primary">
-    	<div class="wrapper">
-        	<p class="centered">&copy; 2019 all rights reserved</p>
-        </div>
-    </footer>
+			</div>
+		</section>
 
+		<!-- Contact section -->
+		<section class="section" id="contact">
+			<h2 class="section-title">💌 Let's Connect!</h2>
+			<p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
+				I'd love to hear from you! Whether it's about collaboration, opportunities, or just to say hi 🌸
+			</p>
+			<div class="contact-links">
+				<a href="mailto:nidhi123shekhar@gmail.com" class="contact-link">
+					📧 Email Me
+				</a>
+				<a href="https://www.linkedin.com/in/nidhi-shekhar/" class="contact-link">
+					💼 LinkedIn
+				</a>
+				<a href="https://github.com/NidhiShekhar/" class="contact-link">
+					🐱 GitHub
+				</a>
+				<a href="/resume.pdf" class="contact-link">
+					📄 Resume
+				</a>
+			</div>
+		</section>
+	</div>
+</main>
+
+<!-- Footer -->
+<footer>
+	<p>Made with 💖 by Nidhi | Inspired by my favourite farm sim - Stardew Valley !</p>
+</footer>
+
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
 </body>
 </html>

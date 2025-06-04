@@ -1,299 +1,529 @@
+/* =====================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ===================================== */
+:root {
+	--pink-light: #fdf2f8;
+	--pink-soft: #fce7f3;
+	--pink-medium: #f9a8d4;
+	--pink-bright: #ec4899;
+	--pink-dark: #be185d;
+	--green-soft: #dcfce7;
+	--green-medium: #86efac;
+	--brown-soft: #fed7aa;
+	--brown-medium: #fdba74;
 
-/********************* NOTES ************************
-The basic resets below allow you to create your own styling
-without having to fight some of the most annoying built in 
-agent user styles.
-****************************************************/
+	/* Typography */
+	--font-primary: 'Nunito', sans-serif;
+	--font-heading: 'Fredoka One', cursive;
 
-/************* Basic Resets ***************/
+	/* Spacing */
+	--spacing-xs: 0.5rem;
+	--spacing-sm: 1rem;
+	--spacing-md: 2rem;
+	--spacing-lg: 3rem;
+	--spacing-xl: 4rem;
 
-h1, h2, h3, h4, p, ul, ol, blockquote {
+	/* Border radius */
+	--radius-sm: 15px;
+	--radius-md: 20px;
+	--radius-lg: 25px;
+	--radius-xl: 30px;
+
+	/* Shadows */
+	--shadow-sm: 0 4px 15px rgba(236, 72, 153, 0.1);
+	--shadow-md: 0 8px 25px rgba(236, 72, 153, 0.1);
+	--shadow-lg: 0 10px 30px rgba(236, 72, 153, 0.2);
+
+	/* Transitions */
+	--transition-fast: 0.2s ease;
+	--transition-normal: 0.3s ease;
+	--transition-slow: 0.5s ease;
+}
+
+/* =====================================
+   BASE STYLES
+   ===================================== */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-primary);
+	background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-soft) 100%);
+	min-height: 100vh;
+	color: #4a5568;
+	overflow-x: hidden;
+	line-height: 1.6;
+}
+
+/* =====================================
+   FLOATING DECORATIVE ELEMENTS
+   ===================================== */
+.floating-hearts {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.heart {
+	position: absolute;
+	font-size: 1.25rem;
+	color: var(--pink-medium);
+	opacity: 0.3;
+	animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%, 100% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-20px) rotate(5deg);
+	}
+}
+
+/* =====================================
+   NAVIGATION
+   ===================================== */
+nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: rgba(253, 242, 248, 0.95);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px); /* Safari support */
+	padding: var(--spacing-sm) var(--spacing-md);
+	z-index: 100;
+	border-bottom: 3px solid var(--pink-medium);
+}
+
+.nav-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-family: var(--font-heading);
+	font-size: 1.5rem;
+	color: var(--pink-dark);
+	text-decoration: none;
+	transition: var(--transition-normal);
+}
+
+.logo:hover {
+	transform: scale(1.05);
+}
+
+.nav-links {
+	display: flex;
+	list-style: none;
+	gap: var(--spacing-md);
 	margin: 0;
 	padding: 0;
 }
 
-nav ul, nav ol {
-	list-style-type: none;
+.nav-links a {
+	text-decoration: none;
+	color: var(--pink-dark);
+	font-weight: 600;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border-radius: var(--radius-md);
+	transition: var(--transition-normal);
 }
 
-/******** Additional resets *********/
-a { text-decoration:none; }
-
-img {
-	display: block;
-	max-width:100%; 
-	height: auto;
+.nav-links a:hover {
+	background: var(--pink-medium);
+	color: white;
+	transform: translateY(-2px);
 }
 
-* { box-sizing: border-box; }
-
-/************ End CSS Reset  *************/
-
-
-/********************* NOTES ************************
-Below are the only colors I have used. Choose four new
-colors and do a find and replace to replace the hex codes.
-****************************************************/
-
-
-/*********** Colors ***********
-
-primary = #b5b5b5;
-secondary = #efefef;
-accent = #4574b5
-text default = #333333;
-
-
-********************************/
-
-
-/************* Basic Page Rules ************/
-
-
-/********************* NOTES ************************
-I set the background of the page to dark and the main
-font to Georgia for most of the type. The header font
-is set to Arial. You could get two fonts that work well
-together and replace these choices. You may have to adjust
-sizing and spacing as well.
-****************************************************/
-
-
-body {
-	font-family:Georgia;
-	color:#333;
-	background:#333;
+/* =====================================
+   MAIN CONTENT
+   ===================================== */
+main {
+	margin-top: 80px;
+	padding: var(--spacing-md);
 }
 
-/************* typography ************/
-
-h1, h2, h3, h4, nav { 
-	font-family:Arial;
-	font-weight:bold; 
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
-h1 {
-	font-size:250%;
-	margin-bottom:1em;
+/* =====================================
+   HERO SECTION
+   ===================================== */
+.hero {
+	text-align: center;
+	padding: var(--spacing-xl) 0;
+	background: linear-gradient(135deg, var(--pink-soft), var(--green-soft));
+	border-radius: var(--radius-xl);
+	margin-bottom: var(--spacing-lg);
+	position: relative;
+	overflow: hidden;
 }
 
-h2 {
-	font-size:170%;
-	margin-bottom:1em;
+.hero h1 {
+	font-family: var(--font-heading);
+	font-size: clamp(2rem, 5vw, 3rem);
+	color: var(--pink-dark);
+	margin-bottom: var(--spacing-sm);
 }
 
-h3 { 
-	font-size:135%;
-	margin-bottom:1em;
+.hero p {
+	font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+	color: #6b7280;
+	max-width: 600px;
+	margin: 0 auto var(--spacing-md);
 }
 
-h4 { 
-	font-size:115%;
-	margin-bottom:.5em;
-}
-	
-
-p {
-	line-height:1.5em;
-	margin-bottom:1em;
-}
-
-a { color: #4574b5; }
-
-.social { font-size:175%; }
-
-.centered { text-align:center; }
-
-/****************** Grid ******************/
-
-.primary { background:#b5b5b5; }
-.secondary { background:#efefef; }
-
-
-/****************** Header and Main Navigation ****************/
-
-header {
-	padding: 20px;
+.cta-button {
+	display: inline-block;
+	background: var(--pink-bright);
+	color: white;
+	padding: var(--spacing-sm) var(--spacing-md);
+	border-radius: var(--radius-lg);
+	text-decoration: none;
+	font-weight: 700;
+	transition: var(--transition-normal);
+	box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
 }
 
-header .wrapper {
+.cta-button:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+}
+
+/* =====================================
+   SECTION STYLES
+   ===================================== */
+.section {
+	margin-bottom: var(--spacing-xl);
+	padding: var(--spacing-lg);
+	background: white;
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-md);
+	border: 3px solid var(--pink-soft);
+	position: relative;
+	font-weight: 200;
+}
+
+.section-title {
+	font-family: var(--font-heading);
+	font-size: clamp(2rem, 4vw, 2.5rem);
+	color: var(--pink-dark);
+	text-align: center;
+	margin-bottom: var(--spacing-md);
+	position: relative;
+	font-weight: 200;
+}
+
+.section-title::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	height: 4px;
+	background: var(--pink-medium);
+	border-radius: 2px;
+	font-weight: 200;
+}
+
+/* =====================================
+   CARDS GRID
+   ===================================== */
+.cards-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: var(--spacing-md);
+	margin-top: var(--spacing-lg);
+}
+
+.card {
+	background: var(--pink-light);
+	padding: var(--spacing-md);
+	border-radius: var(--radius-md);
+	border: 2px solid var(--pink-soft);
+	transition: var(--transition-normal);
+	position: relative;
+	overflow: hidden;
+}
+
+.card::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -50%;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle, var(--pink-medium) 0%, transparent 70%);
+	opacity: 0.1;
+	transition: var(--transition-normal);
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--shadow-lg);
+	border-color: var(--pink-medium);
+}
+
+.card:hover::before {
+	opacity: 0.2;
+}
+
+.card h3 {
+	font-family: var(--font-heading);
+	color: var(--pink-dark);
+	margin-bottom: var(--spacing-sm);
+	font-size: 1.3rem;
+	font-weight: 200;
+}
+
+.card p {
+	color: #6b7280;
+	line-height: 1.6;
+	margin-bottom: var(--spacing-sm);
+}
+
+.card-tags {
 	display: flex;
-	flex-direction: column-reverse;
+	flex-wrap: wrap;
+	gap: var(--spacing-xs);
+	margin-top: var(--spacing-sm);
+}
+
+.tag {
+	background: var(--pink-medium);
+	color: white;
+	padding: 0.3rem 0.8rem;
+	border-radius: var(--radius-sm);
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+/* =====================================
+   RESEARCH SECTION
+   ===================================== */
+.research-card {
+	background: linear-gradient(135deg, var(--green-soft), var(--pink-light));
+}
+
+/* =====================================
+   HOBBIES SECTION
+   ===================================== */
+.hobbies-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+	margin-top: var(--spacing-md);
+}
+
+.hobby-card {
+	background: var(--brown-soft);
+	padding: 1.5rem;
+	border-radius: var(--radius-sm);
+	text-align: center;
+	border: 2px solid var(--brown-medium);
+	transition: var(--transition-normal);
+}
+
+.hobby-card:hover {
+	transform: scale(1.05);
+}
+
+.hobby-icon {
+	font-size: 3rem;
+	margin-bottom: var(--spacing-sm);
+}
+
+.hobby-card h3 {
+	font-family: var(--font-heading);
+	color: var(--pink-dark);
+	margin-bottom: var(--spacing-xs);
+}
+
+.hobby-card p {
+	color: #6b7280;
+	font-size: 0.9rem;
+}
+
+/* =====================================
+   BLOG SECTION
+   ===================================== */
+.blog-preview {
+	background: linear-gradient(135deg, var(--pink-soft), var(--green-soft));
+	padding: var(--spacing-md);
+	border-radius: var(--radius-md);
+	text-align: center;
+	margin-top: var(--spacing-md);
+}
+
+.blog-preview h3 {
+	font-family: var(--font-heading);
+	color: var(--pink-dark);
+	margin-bottom: var(--spacing-sm);
+}
+
+.blog-preview p {
+	color: #6b7280;
+	line-height: 1.6;
+}
+
+/* =====================================
+   CONTACT SECTION
+   ===================================== */
+.contact-links {
+	display: flex;
+	justify-content: center;
+	gap: var(--spacing-md);
+	margin-top: var(--spacing-md);
 	flex-wrap: wrap;
 }
 
-.logo-container {
+.contact-link {
 	display: flex;
-	flex-direction: row-reverse;
-	justify-content: flex-end;
+	align-items: center;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-sm) var(--spacing-md);
+	background: var(--pink-bright);
+	color: white;
+	text-decoration: none;
+	border-radius: var(--radius-lg);
+	font-weight: 600;
+	transition: var(--transition-normal);
 }
 
-#logo {
-	margin-right:20px;
+.contact-link:hover {
+	background: var(--pink-dark);
+	transform: translateY(-2px);
 }
 
-
-#mainnav {
-	margin-bottom: 20px;
-}
-
-#mainnav ul {
-	display: flex;
-	justify-content: center;
-}
-
-#mainnav ul li a {
-	display:block;
-	color: #4574b5;
-	border-left: 2px solid #4574b5;
-	padding:0 20px;
-	font-size:20px;
-}
-
-/********************* NOTES ************************
-Removes the border on the first link...
-****************************************************/
-
-#mainnav ul li:first-of-type a {
-	border:none;
-}
-
-
-/***************** Section Specific Rules *****************/
-
-#work {
-	background:#fff;
-	padding: 20px;
-}
-
-#work img, .additional-projects img {
-	width: 100%;
-	margin-bottom: 10px;
-}
-
-.featured, .projects, #page-template #work section {
-	margin-bottom: 40px;
-}
-
-#about-contact, .additional-projects {
-	padding: 20px;
-}
-
-#about-contact img {
-	margin-bottom: 10px;
-}
-
-/********************* NOTES ************************
-I added all this margin to the bottom of the footer so
-that when you click the link for "about" or "contact" in
-the main nav, there is room for them to go all the way to
-the top of the page.
-****************************************************/
-
+/* =====================================
+   FOOTER
+   ===================================== */
 footer {
-	padding: 20px;
-	margin-bottom:600px;
+	background: var(--pink-dark);
+	color: white;
+	text-align: center;
+	padding: var(--spacing-md);
+	margin-top: var(--spacing-xl);
 }
 
-@media only screen and (min-width: 650px) {
-	#work {
-		padding: 20px 10px;
-	}
-	
-	#work article, h2 {
-		padding: 0 10px;
-	}
-	
-	.projects, #page-template #work section  {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	
-	.projects article, #page-template #work section article {
-		width: 50%;
-	}
-	
-	.additional-projects .wrapper{
-		display: flex;
-		flex-wrap: wrap;
-	}
-	
-	.additional-projects h2 {
-		flex-basis: 100%;
-	}
-	
-	.additional-projects article {
-		width: 50%;
-		padding: 0 10px;
-	}
-	
-	#about-contact {
-		padding: 0;
-	}
-	
-	#about-contact .wrapper {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: flex-start;
-		padding: 20px 10px;
-	}
-	
-	#about-contact .profile-photo {
-		flex: 1;
-		padding: 0 10px;
-		width: 100%;
-	}
-	
-	#about-contact article {
-		padding: 0 10px;
-	}
-	
-	#about-contact article:first-of-type {
-		flex: 2;
-	}
-	
-	#about-contact article:last-of-type {
-		flex-basis: 100%;
-	}
-	
+footer p {
+	margin: 0;
 }
 
-@media only screen and (min-width: 768px) {
-	
-	.featured {
-		display: flex;
+/* =====================================
+   RESPONSIVE DESIGN
+   ===================================== */
+@media (max-width: 768px) {
+	.nav-links {
+		display: none;
 	}
-	
-	.featured article {
+
+	.section {
+		padding: var(--spacing-md) 1.5rem;
+	}
+
+	.contact-links {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.cards-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.hobbies-grid {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+}
+
+@media (max-width: 480px) {
+	:root {
+		--spacing-sm: 0.75rem;
+		--spacing-md: 1.5rem;
+		--spacing-lg: 2rem;
+		--spacing-xl: 2.5rem;
+	}
+
+	.hero {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		text-align: left;
+		padding: var(--spacing-xl);
+		gap: var(--spacing-lg);
+	}
+
+	.hero-content {
 		flex: 1;
 	}
-	
-	.additional-projects article {
-		width: 25%;
+
+	.hero-image {
+		flex: 0 0 220px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
-	
-	#about-contact .wrapper {
-		flex-wrap: nowrap;
+
+	.hero-image img {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 4px solid var(--pink-medium);
 	}
-	
-	#about-contact article:last-of-type {
-		flex: 2;
-		flex-basis: 0;
+
+	.section {
+		padding: var(--spacing-md) var(--spacing-sm);
+	}
+
+	.nav-container {
+		padding: 0 var(--spacing-sm);
 	}
 }
 
-@media only screen and (min-width: 1040px) {
-	.wrapper {
-		width: 1020px;
-		margin: auto;
+/* =====================================
+   ACCESSIBILITY IMPROVEMENTS
+   ===================================== */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
 	}
-	
-	header .wrapper {
-		padding: 0 10px;
+
+	.floating-hearts {
+		display: none;
 	}
-	
-	/*Change the width here to 33% if you want three articles in a row*/
-	.projects article {
-		width: 25%;
+}
+
+/* Focus styles for better accessibility */
+a:focus,
+button:focus {
+	outline: 2px solid var(--pink-bright);
+	outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+	:root {
+		--pink-light: #f8f9fa;
+		--pink-soft: #e9ecef;
+		--pink-medium: #6f42c1;
+		--pink-bright: #495057;
+		--pink-dark: #212529;
 	}
 }
