@@ -12,6 +12,15 @@
 	--brown-soft: #fed7aa;
 	--brown-medium: #fdba74;
 
+	/* Text colors */
+	--text-primary: #4a5568;
+	--text-secondary: #6b7280;
+
+	/* Background colors */
+	--bg-primary: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-soft) 100%);
+	--bg-secondary: white;
+	--bg-nav: rgba(253, 242, 248, 0.95);
+
 	/* Typography */
 	--font-primary: 'Nunito', sans-serif;
 	--font-heading: 'Fredoka One', cursive;
@@ -40,6 +49,33 @@
 	--transition-slow: 0.5s ease;
 }
 
+/* Dark mode variables */
+.dark-mode {
+	--pink-light: #1a0f17;
+	--pink-soft: #2e1a29;
+	--pink-medium: #9d4b79;
+	--pink-bright: #db3683;
+	--pink-dark: #f0bbd8;
+	--green-soft: #132e1a;
+	--green-medium: #489c6a;
+	--brown-soft: #3d2e1d;
+	--brown-medium: #8b5f33;
+
+	/* Text colors */
+	--text-primary: #e2e8f0;
+	--text-secondary: #a0aec0;
+
+	/* Background colors */
+	--bg-primary: linear-gradient(135deg, #150d13 0%, #1f1520 100%);
+	--bg-secondary: #2d232c;
+	--bg-nav: rgba(29, 17, 25, 0.95);
+
+	/* Shadows */
+	--shadow-sm: 0 4px 15px rgba(236, 72, 153, 0.05);
+	--shadow-md: 0 8px 25px rgba(236, 72, 153, 0.05);
+	--shadow-lg: 0 10px 30px rgba(236, 72, 153, 0.1);
+}
+
 /* =====================================
    BASE STYLES
    ===================================== */
@@ -49,11 +85,81 @@
 
 body {
 	font-family: var(--font-primary);
-	background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-soft) 100%);
+	background: var(--bg-primary);
 	min-height: 100vh;
-	color: #4a5568;
+	color: var(--text-primary);
 	overflow-x: hidden;
 	line-height: 1.6;
+}
+
+/* =====================================
+   THEME TOGGLE STYLES
+   ===================================== */
+.theme-toggle {
+	display: flex;
+	align-items: center;
+}
+
+.theme-switch {
+	opacity: 0;
+	position: absolute;
+}
+
+.theme-switch-label {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.25rem;
+	width: 60px;
+	height: 30px;
+	background: linear-gradient(45deg, var(--pink-soft), var(--pink-medium));
+	border-radius: 30px;
+	cursor: pointer;
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: var(--transition-normal);
+}
+
+.theme-switch-label:hover {
+	transform: scale(1.05);
+}
+
+.toggle-circle {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background: white;
+	transition: var(--transition-normal);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sun, .moon {
+	font-size: 16px;
+	line-height: 1;
+	z-index: 1;
+}
+
+.sun {
+	margin-left: 4px;
+}
+
+.moon {
+	margin-right: 4px;
+}
+
+.theme-switch:checked + .theme-switch-label .toggle-circle {
+	transform: translateX(30px);
+}
+
+.dark-mode .theme-switch-label {
+	background: linear-gradient(45deg, var(--pink-soft), var(--pink-medium));
+}
+
+.dark-mode .toggle-circle {
+	background: #2d232c;
 }
 
 /* =====================================
@@ -93,7 +199,7 @@ nav {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: rgba(253, 242, 248, 0.95);
+	background: var(--bg-nav);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px); /* Safari support */
 	padding: var(--spacing-sm) var(--spacing-md);
@@ -179,7 +285,7 @@ main {
 
 .hero p {
 	font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-	color: #6b7280;
+	color: var(--text-secondary);
 	max-width: 600px;
 	margin: 0 auto var(--spacing-md);
 }
@@ -207,7 +313,7 @@ main {
 .section {
 	margin-bottom: var(--spacing-xl);
 	padding: var(--spacing-lg);
-	background: white;
+	background: var(--bg-secondary);
 	border-radius: var(--radius-lg);
 	box-shadow: var(--shadow-md);
 	border: 3px solid var(--pink-soft);
@@ -289,7 +395,7 @@ main {
 }
 
 .card p {
-	color: #6b7280;
+	color: var(--text-secondary);
 	line-height: 1.6;
 	margin-bottom: var(--spacing-sm);
 }
@@ -352,7 +458,7 @@ main {
 }
 
 .hobby-card p {
-	color: #6b7280;
+	color: var(--text-secondary);
 	font-size: 0.9rem;
 }
 
@@ -374,7 +480,7 @@ main {
 }
 
 .blog-preview p {
-	color: #6b7280;
+	color: var(--text-secondary);
 	line-height: 1.6;
 }
 
@@ -417,6 +523,10 @@ footer {
 	padding: var(--spacing-md);
 	margin-top: var(--spacing-xl);
 }
+/* Add this rule to fix the footer text color in dark mode */
+.dark-mode footer {
+	color: var(--pink-soft); /* This sets the text to a darker color in dark mode */
+}
 
 footer p {
 	margin: 0;
@@ -445,6 +555,12 @@ footer p {
 
 	.hobbies-grid {
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+
+	.theme-toggle {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
 	}
 }
 
@@ -525,5 +641,13 @@ button:focus {
 		--pink-medium: #6f42c1;
 		--pink-bright: #495057;
 		--pink-dark: #212529;
+	}
+
+	.dark-mode {
+		--pink-light: #000;
+		--pink-soft: #111;
+		--pink-medium: #6f42c1;
+		--pink-bright: #e9ecef;
+		--pink-dark: #f8f9fa;
 	}
 }
