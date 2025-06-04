@@ -23,7 +23,7 @@
 
 	/* Typography */
 	--font-primary: 'Nunito', sans-serif;
-	--font-heading: 'Fredoka One', cursive;
+	--font-heading: 'Georgia', 'Times New Roman' serif;
 
 	/* Spacing */
 	--spacing-xs: 0.5rem;
@@ -650,4 +650,73 @@ button:focus {
 		--pink-bright: #e9ecef;
 		--pink-dark: #f8f9fa;
 	}
+}
+
+/* =====================================
+   JUNIMO ANIMATIONS
+   ===================================== */
+.junimos {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.junimo {
+	position: absolute;
+	font-size: 1.75rem;
+	opacity: 0.7;
+	animation: slide-down 8s linear infinite;
+}
+
+.junimo-left {
+	left: 5%;
+}
+
+.junimo-right {
+	right: 5%;
+}
+
+@keyframes slide-down {
+	0% {
+		transform: translateY(-50px) rotate(0deg);
+		opacity: 0;
+	}
+	10% {
+		opacity: 0.7;
+	}
+	90% {
+		opacity: 0.7;
+	}
+	100% {
+		transform: translateY(calc(100vh + 50px)) rotate(360deg);
+		opacity: 0;
+	}
+}
+
+/* Make Junimos visible near the hero section */
+.junimo-left:nth-child(1) { left: 5%; }
+.junimo-left:nth-child(2) { left: 8%; }
+.junimo-left:nth-child(3) { left: 3%; }
+.junimo-right:nth-child(4) { right: 5%; }
+.junimo-right:nth-child(5) { right: 8%; }
+.junimo-right:nth-child(6) { right: 3%; }
+
+/* Add support for dark mode */
+.dark-mode .junimo {
+	filter: brightness(0.85);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+	.junimos {
+		display: none;
+	}
+}
+.junimo img {
+	width: 30px;
+	height: 30px;
 }
