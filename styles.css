@@ -11,6 +11,7 @@
 	--green-medium: #86efac;
 	--brown-soft: #fed7aa;
 	--brown-medium: #fdba74;
+	--purple-dark: #7c3aed;
 
 	/* Text colors */
 	--text-primary: #4a5568;
@@ -454,7 +455,7 @@ main {
 
 /* Ensure proper dark mode styling */
 .dark-mode .paper-button {
-	background: linear-gradient(135deg, var(--pink-dark) 0%, var(--purple-dark) 100%);
+	background: linear-gradient(135deg, var(--pink-medium) 0%, var(--purple-dark) 100%);
 	color: white;
 }
 /* =====================================
