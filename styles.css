@@ -667,9 +667,9 @@ button:focus {
 
 .junimo {
 	position: absolute;
-	font-size: 1.75rem;
+	font-size: 2.75rem;
 	opacity: 0.7;
-	animation: slide-down 8s linear infinite;
+	animation: slide-down 9s linear forwards;
 }
 
 .junimo-left {
@@ -679,6 +679,35 @@ button:focus {
 .junimo-right {
 	right: 5%;
 }
+
+.large-junimo {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	z-index: 10;
+}
+
+.large-junimo img {
+	width: 70px;
+	height: 70px;
+	animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+	0%, 100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-10px) rotate(5deg);
+	}
+}
+
+/* Make sure the hero section has position: relative */
+/*.hero {*/
+/*	position: relative;*/
+/*	!* your existing styles *!*/
+/*}*/
+
 
 @keyframes slide-down {
 	0% {
