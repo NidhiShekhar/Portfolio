@@ -423,6 +423,40 @@ main {
 	background: linear-gradient(135deg, var(--green-soft), var(--pink-light));
 }
 
+.paper-button-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+
+.paper-button {
+	display: inline-block;
+	padding: 0.6rem 1.2rem;
+	background: linear-gradient(135deg, var(--pink-bright) 0%, var(--pink-dark) 100%);
+	color: white;
+	border-radius: 2rem;
+	font-weight: 600;
+	text-decoration: none;
+	box-shadow: 0 4px 10px rgba(201, 122, 199, 0.3);
+	transition: all 0.3s ease;
+	border: none;
+	font-size: 0.9rem;
+}
+
+.paper-button:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 7px 15px rgba(201, 122, 199, 0.5);
+}
+
+.paper-button:active {
+	transform: translateY(-1px);
+}
+
+/* Ensure proper dark mode styling */
+.dark-mode .paper-button {
+	background: linear-gradient(135deg, var(--pink-dark) 0%, var(--purple-dark) 100%);
+	color: white;
+}
 /* =====================================
    HOBBIES SECTION
    ===================================== */
@@ -748,4 +782,42 @@ button:focus {
 .junimo img {
 	width: 30px;
 	height: 30px;
+}
+
+/* Mobile responsiveness fixes for the CTA button */
+@media screen and (max-width: 768px) {
+	.hero {
+		padding: 2rem 1rem; /* Add more breathing room */
+		text-align: center;
+	}
+
+	.cta-button {
+		display: inline-block;
+		width: auto;
+		max-width: 90%; /* Ensure button doesn't overflow container */
+		margin: 1rem auto 0;
+	}
+
+	/* Adjust large junimo position on mobile */
+	.large-junimo {
+		top: 5px;
+		right: 5px;
+	}
+
+	.large-junimo img {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+	.hero h1 {
+		font-size: 1.8rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.hero p {
+		font-size: 0.9rem;
+	}
 }
