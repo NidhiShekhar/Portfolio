@@ -55,7 +55,7 @@
 	--pink-light: #1a0f17;
 	--pink-soft: #2e1a29;
 	--pink-medium: #9d4b79;
-	--pink-bright: #db3683;
+	--pink-bright: #000000;
 	--pink-dark: #f0bbd8;
 	--green-soft: #132e1a;
 	--green-medium: #489c6a;
@@ -687,6 +687,37 @@ button:focus {
 	}
 }
 
+/* Parallax scrolling cat image */
+.parallax-cat {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 50;
+	width: 100px;
+	height: 100px;
+	transition: transform 0.1s ease-out;
+	display: none;
+	cursor : pointer;
+}
+
+.parallax-cat img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transition: transform 0.2s ease-out;
+}
+
+.parallax-cat:hover img {
+	transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+/* Only show on larger screens */
+@media screen and (min-width: 769px) {
+	.parallax-cat {
+		display: block;
+	}
+}
+
 /* =====================================
    JUNIMO ANIMATIONS
    ===================================== */
@@ -723,9 +754,21 @@ button:focus {
 }
 
 .large-junimo img {
-	width: 70px;
-	height: 70px;
+	width: 140px;
+	height: 140px;
 	animation: bounce 3s ease-in-out infinite;
+}
+
+.bottom-junimo {
+	position: absolute;
+	bottom: 5px;
+	left: 15px;
+	z-index: 1;
+}
+
+.bottom-junimo img {
+	width: 80px;
+	height: 80px;
 }
 
 @keyframes bounce {
@@ -847,4 +890,24 @@ button:focus {
 		max-width: 90%;
 		margin: 1rem auto 0;
 	}
+}
+
+/* Sound button styling */
+.sound-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.2rem;
+	margin-left: 10px;
+	padding: 5px;
+	border-radius: 50%;
+	transition: transform 0.2s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sound-button:hover {
+	transform: scale(1.1);
+	background-color: rgba(255, 255, 255, 0.2);
 }

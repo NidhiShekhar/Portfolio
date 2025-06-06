@@ -39,6 +39,10 @@
 				<span class="moon">🌙</span>
 				<div class="toggle-circle"></div>
 			</label>
+			<button id="sound-button" class="sound-button">
+				<span class="sound-on-icon">🔊</span>
+				<span class="sound-off-icon" style="display: none;">🔇</span>
+			</button>
 		</div>
 		<ul class="nav-links">
 			<li><a href="#about">About</a></li>
@@ -65,7 +69,8 @@
 			<div class="junimo junimo-right" style="animation-delay: 3s;"><img src="6.png"></div>
 		</div>
 		<section class="hero" id="about">
-			<div class="large-junimo"><img src="pinkju.png" alt="Junimo"></div>
+			<div class="large-junimo"><img src="pinkcattransparent.png" alt="Junimo"></div>
+			<div class="bottom-junimo"><img src="pinkju.png" alt="pinkJunimo"></div>
 			<h1>Hello, I'm Nidhi !</h1>
 			<p>Computer Science undergraduate passionate about creating functional solutions for real world problems. Welcome to my little corner of the digital world :)</p>
 			<a href="#projects" class="cta-button">Explore My Work ✨</a>
@@ -207,5 +212,139 @@
 
 <!-- Custom JavaScript -->
 <script src="script.js"></script>
+<audio id="light-theme-audio" preload="auto">
+	<source src="light_theme.mp3" type="audio/mp3">
+</audio>
+<audio id="dark-theme-audio" preload="auto">
+	<source src="dark_theme.mp3" type="audio/mp3">
+</audio>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const parallaxCat = document.querySelector('.parallax-cat');
+		const lightAudio = document.getElementById('light-theme-audio');
+		const darkAudio = document.getElementById('dark-theme-audio');
+		const soundButton = document.getElementById('sound-button');
+		const soundOnIcon = document.querySelector('.sound-on-icon');
+		const soundOffIcon = document.querySelector('.sound-off-icon');
+		const themeSwitch = document.getElementById('theme-switch');
+
+		// Track if audio is currently playing
+		let isPlaying = false;
+		let currentAudio = null;
+
+		// Sound state management
+		let soundEnabled = localStorage.getItem('soundEnabled') !== 'false'; // Default to true
+
+		// Initialize sound button state
+		updateSoundButtonUI();
+
+		// Debug the theme status - log to console when clicked
+		themeSwitch.addEventListener('change', function() {
+			console.log("Theme changed. Dark mode: ", document.documentElement.classList.contains('dark-mode'));
+
+			// If audio is currently playing, switch to the appropriate theme audio
+			if (isPlaying && soundEnabled) {
+				stopAllAudio();
+				playAppropriateAudio();
+			}
+		});
+
+		function playAppropriateAudio() {
+			// Check if dark mode is active by checking the html element class
+			const isDarkMode = document.documentElement.classList.contains('dark-mode');
+			console.log("Playing audio for mode:", isDarkMode ? "dark" : "light");
+
+			if (isDarkMode) {
+				darkAudio.play();
+				currentAudio = darkAudio;
+			} else {
+				lightAudio.play();
+				currentAudio = lightAudio;
+			}
+			isPlaying = true;
+		}
+
+		// Sound button click handler
+		soundButton.addEventListener('click', function() {
+			soundEnabled = !soundEnabled;
+			localStorage.setItem('soundEnabled', soundEnabled);
+			updateSoundButtonUI();
+
+			// If sound is now disabled, stop any playing audio
+			if (!soundEnabled) {
+				stopAllAudio();
+				isPlaying = false;
+			}
+		});
+
+		function updateSoundButtonUI() {
+			if (soundEnabled) {
+				soundOnIcon.style.display = 'block';
+				soundOffIcon.style.display = 'none';
+			} else {
+				soundOnIcon.style.display = 'none';
+				soundOffIcon.style.display = 'block';
+			}
+		}
+
+		function stopAllAudio() {
+			lightAudio.pause();
+			lightAudio.currentTime = 0;
+			darkAudio.pause();
+			darkAudio.currentTime = 0;
+			currentAudio = null;
+			isPlaying = false;
+		}
+
+		// Only apply effects if cat element exists and screen is large enough
+		if (parallaxCat && window.innerWidth >= 769) {
+			// Parallax effect
+			const movementDivider = 20;
+
+			window.addEventListener('scroll', function() {
+				const scrollY = window.scrollY;
+				const translateY = scrollY / movementDivider;
+				parallaxCat.style.transform = `translateY(-${translateY}px)`;
+			});
+
+			// Toggle audio on click
+			parallaxCat.addEventListener('click', function() {
+				if (!soundEnabled) return;
+
+				// If audio is already playing, stop it
+				if (isPlaying) {
+					stopAllAudio();
+					return;
+				}
+
+				// Otherwise play appropriate audio
+				playAppropriateAudio();
+			});
+		}
+	});
+</script>
+<div class="parallax-cat">
+	<img src="croppixelsingcat.png" alt="Pixel Cat">
+</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const parallaxCat = document.querySelector('.parallax-cat');
+
+		// Only apply the effect if the cat element exists and the screen is large enough
+		if (parallaxCat && window.innerWidth >= 769) {
+			// Slow down the movement for a subtle effect
+			const movementDivider = 20;
+
+			window.addEventListener('scroll', function() {
+				// Calculate position based on scroll
+				const scrollY = window.scrollY;
+				const translateY = scrollY / movementDivider;
+
+				// Apply transformation with some constraints
+				parallaxCat.style.transform = `translateY(-${translateY}px)`;
+			});
+		}
+	});
+</script>
 </body>
 </html>
