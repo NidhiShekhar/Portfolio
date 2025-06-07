@@ -29,6 +29,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// About panel functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all elements that should trigger the about panel
+    const aboutTriggers = [
+        document.querySelector('.logo'), // Nidhi Shekhar in nav
+        ...Array.from(document.querySelectorAll('.nav-links a')).filter(a => a.textContent.includes('About')), // About in nav
+        document.querySelector('.cta-button') // About me! button
+    ].filter(Boolean); // Filter out any null elements
+
+    const aboutPanel = document.querySelector('.about-panel');
+    const backArrow = document.querySelector('.back-arrow');
+
+    // Add click event to each trigger
+    aboutTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            if (this.classList.contains('logo') ||
+                (this.textContent && this.textContent.includes('About'))) {
+                e.preventDefault(); // Prevent default only for nav links
+            }
+            aboutPanel.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when panel is open
+        });
+    });
+
+    // Close panel when back arrow is clicked
+    backArrow.addEventListener('click', function() {
+        aboutPanel.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+
+    // Close panel when clicking outside (optional)
+    document.addEventListener('click', function(e) {
+        if (aboutPanel.classList.contains('active') &&
+            !aboutPanel.contains(e.target) &&
+            !aboutTriggers.some(trigger => trigger.contains(e.target))) {
+            aboutPanel.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
 // =====================================
 // MAIN INITIALIZATION FUNCTION
 // =====================================

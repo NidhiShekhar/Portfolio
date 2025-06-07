@@ -57,22 +57,37 @@
 
 <!-- Main content -->
 <main>
+	<!-- Slide-in About Me Panel -->
+	<div class="about-panel">
+		<button class="back-arrow">←</button>
+		<div class="about-content">
+			<div class="profile-picture-container">
+				<img src="nidhipic.webp" alt="Nidhi Shekhar" class="profile-picture">
+			</div>
+			<h2>About Me</h2>
+
+			<p>I'm a 3rd year Computer Science undergrad at People's Education Society (PES) University, Bengaluru.</p>
+			<p>My interest lies in Machine Learning, UI/UX, Systems programming. I look forward to working on solutions for real world problems !</p>
+		</div>
+		<a href="resume.pdf" class="download-resume" download>Download Resume</a>
+	</div>
 	<div class="container">
 		<!-- Hero section -->
 		<!-- Junimo animations -->
-		<div class="junimos">
-			<div class="junimo junimo-left" style="animation-delay: 0s;"><img src="1.png"></div>
-			<div class="junimo junimo-left" style="animation-delay: 1s;"><img src="2.png"></div>
-			<div class="junimo junimo-left" style="animation-delay: 2s;"><img src="3.png"></div>
-			<div class="junimo junimo-right" style="animation-delay: 1s;"><img src="4.png"></div>
-			<div class="junimo junimo-right" style="animation-delay: 2s;"><img src="5.png"></div>
-			<div class="junimo junimo-right" style="animation-delay: 3s;"><img src="6.png"></div>
-		</div>
+<!--		<div class="junimos">-->
+<!--			<div class="junimo junimo-left" style="animation-delay: 0s;"><img src="1.png"></div>-->
+<!--			<div class="junimo junimo-left" style="animation-delay: 1s;"><img src="2.png"></div>-->
+<!--			<div class="junimo junimo-left" style="animation-delay: 2s;"><img src="3.png"></div>-->
+<!--			<div class="junimo junimo-right" style="animation-delay: 1s;"><img src="4.png"></div>-->
+<!--			<div class="junimo junimo-right" style="animation-delay: 2s;"><img src="5.png"></div>-->
+<!--			<div class="junimo junimo-right" style="animation-delay: 3s;"><img src="6.png"></div>-->
+<!--		</div>-->
 		<section class="hero" id="about">
 			<div class="large-junimo"><img src="pinkcattransparent.png" alt="Junimo"></div>
 			<div class="bottom-junimo"><img src="pinkju.png" alt="pinkJunimo"></div>
 			<h1>Hello, I'm Nidhi !</h1>
-			<p>Computer Science undergraduate passionate about creating functional solutions for real world problems. Welcome to my little corner of the digital world :)</p>
+			<p>Welcome to my little corner of the digital world :)</p>
+			<a href="#projects" class="cta-button">About Me !</a>
 			<a href="#projects" class="cta-button">Explore My Work ✨</a>
 		</section>
 
@@ -82,7 +97,7 @@
 			<div class="cards-grid">
 				<div class="card">
 					<h3>Project ThirdEye</h3>
-					<p>A beautiful web application built with React and Node.js that helps users track their daily habits with gamification elements inspired by farming games.</p>
+					<p>smart surveillance system.</p>
 					<div class="card-tags">
 						<span class="tag">React</span>
 						<span class="tag">Node.js</span>
@@ -90,8 +105,8 @@
 					</div>
 				</div>
 				<div class="card">
-					<h3>Pixel Adventures</h3>
-					<p>A 2D platformer game developed in Unity with custom pixel art and engaging gameplay mechanics. Features multiple levels and power-ups.</p>
+					<h3>TrasHTTP</h3>
+					<p>A lightweight, multithreaded web server written in C, designed to handle multiple client requests simultaneously, using configurable scheduling.</p>
 					<div class="card-tags">
 						<span class="tag">Unity</span>
 						<span class="tag">C#</span>
@@ -99,8 +114,35 @@
 					</div>
 				</div>
 				<div class="card">
-					<h3>Campus Connect</h3>
-					<p>Mobile app connecting students for study groups and events. Built with Flutter and Firebase, serving over 500 active users.</p>
+					<h3>Campus Skill Connect</h3>
+					<p>SKill exchange platform built with React, Node.js, and SQL. It allows users to manage and collaborate on skills and projects of their choice, built for collaboration between peers in colleges who are new to coding.</p>
+					<div class="card-tags">
+						<span class="tag">Flutter</span>
+						<span class="tag">Firebase</span>
+						<span class="tag">Dart</span>
+					</div>
+				</div>
+				<div class="card">
+					<h3>AWS lambda Clone</h3>
+					<p>Serverless lambda execution platform.</p>
+					<div class="card-tags">
+						<span class="tag">Flutter</span>
+						<span class="tag">Firebase</span>
+						<span class="tag">Dart</span>
+					</div>
+				</div>
+				<div class="card">
+					<h3>This portofolio</h3>
+					<p>My favourite project of them all, The cute cats were me trying to make my first pixel art using gimp :)</p>
+					<div class="card-tags">
+						<span class="tag">Flutter</span>
+						<span class="tag">Firebase</span>
+						<span class="tag">Dart</span>
+					</div>
+				</div>
+				<div class="card">
+					<h3>Portfolio Manager for stocks</h3>
+					<p> springboot and stuff</p>
 					<div class="card-tags">
 						<span class="tag">Flutter</span>
 						<span class="tag">Firebase</span>
@@ -112,7 +154,7 @@
 
 		<!-- Research section -->
 		<section class="section" id="research">
-			<h2 class="section-title">🔬 Research Work</h2>
+			<h2 class="section-title">Research Work</h2>
 			<div class="cards-grid">
 				<div class="card research-card">
 					<h3>Comparative Analysis of Machine Learning Algorithms for Binary Classification of Tea Leaf Diseases</h3>
@@ -148,17 +190,17 @@
 			<div class="hobbies-grid">
 				<div class="hobby-card">
 					<div class="hobby-icon">🎨</div>
-					<h3>Digital Art</h3>
-					<p>Creating pixel art and illustrations, especially character designs for games</p>
+					<h3>Fine Arts</h3>
+					<p>Recently delving into creating pixel art and illustrations, especially character designs for games- mainly using gimp</p>
 				</div>
 				<div class="hobby-card">
-					<div class="hobby-icon">🌱</div>
-					<h3>Gardening</h3>
+					<div class="hobby-icon">🎵</div>
+					<h3>Music</h3>
 					<p>Growing herbs and flowers, just like in Stardew Valley!</p>
 				</div>
 				<div class="hobby-card">
-					<div class="hobby-icon">📚</div>
-					<h3>Reading</h3>
+					<div class="hobby-icon">📸</div>
+					<h3>Photography</h3>
 					<p>Fantasy novels and tech blogs are my go-to reading materials</p>
 				</div>
 				<div class="hobby-card">
@@ -188,17 +230,38 @@
 				I'd love to hear from you! Whether it's about collaboration, opportunities, or just to say hi 🌸
 			</p>
 			<div class="contact-links">
-				<a href="mailto:nidhi123shekhar@gmail.com" class="contact-link">
-					📧 Email Me
+<!--				<a href="mailto:nidhi123shekhar@gmail.com" class="contact-link">-->
+<!--					📧 Email Me-->
+<!--				</a>-->
+				<a href="mailto:your.email@example.com" class="contact-link">
+					<svg class="email-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+					</svg>
+					Email
 				</a>
-				<a href="https://www.linkedin.com/in/nidhi-shekhar/" class="contact-link">
-					💼 LinkedIn
+<!--				<a href="https://www.linkedin.com/in/nidhi-shekhar/" class="contact-link">-->
+<!--					💼 LinkedIn-->
+<!--				</a>-->
+				<a href="https://linkedin.com/in/YourUsername" class="contact-link">
+					<svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+					</svg>
+					LinkedIn
 				</a>
 				<a href="https://github.com/NidhiShekhar/" class="contact-link">
-					🐱 GitHub
+					<svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+						<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+					</svg>
+					GitHub
 				</a>
-				<a href="/resume.pdf" class="contact-link">
-					📄 Resume
+<!--				<a href="/resume.pdf" class="contact-link">-->
+<!--					📄 Resume-->
+<!--				</a>-->
+				<a href="resume.pdf" class="contact-link" download>
+					<svg class="resume-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+					</svg>
+					Resume
 				</a>
 			</div>
 		</section>
