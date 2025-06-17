@@ -29,6 +29,129 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const parallaxCat = document.querySelector('.parallax-cat');
+    const lightAudio = document.getElementById('light-theme-audio');
+    const darkAudio = document.getElementById('dark-theme-audio');
+    const soundButton = document.getElementById('sound-button');
+    const soundOnIcon = document.querySelector('.sound-on-icon');
+    const soundOffIcon = document.querySelector('.sound-off-icon');
+    const themeSwitch = document.getElementById('theme-switch');
+
+    // Track if audio is currently playing
+    let isPlaying = false;
+    let currentAudio = null;
+
+    // Sound state management
+    let soundEnabled = localStorage.getItem('soundEnabled') !== 'false'; // Default to true
+
+    // Initialize sound button state
+    updateSoundButtonUI();
+
+    // Debug the theme status - log to console when clicked
+    themeSwitch.addEventListener('change', function() {
+        console.log("Theme changed. Dark mode: ", document.documentElement.classList.contains('dark-mode'));
+
+        // If audio is currently playing, switch to the appropriate theme audio
+        if (isPlaying && soundEnabled) {
+            stopAllAudio();
+            playAppropriateAudio();
+        }
+    });
+
+    function playAppropriateAudio() {
+        // Check if dark mode is active by checking the html element class
+        const isDarkMode = document.documentElement.classList.contains('dark-mode');
+        console.log("Playing audio for mode:", isDarkMode ? "dark" : "light");
+
+        if (isDarkMode) {
+            darkAudio.play();
+            currentAudio = darkAudio;
+        } else {
+            lightAudio.play();
+            currentAudio = lightAudio;
+        }
+        isPlaying = true;
+    }
+
+    // Sound button click handler
+    soundButton.addEventListener('click', function() {
+        soundEnabled = !soundEnabled;
+        localStorage.setItem('soundEnabled', soundEnabled);
+        updateSoundButtonUI();
+
+        // If sound is now disabled, stop any playing audio
+        if (!soundEnabled) {
+            stopAllAudio();
+            isPlaying = false;
+        }
+    });
+
+    function updateSoundButtonUI() {
+        if (soundEnabled) {
+            soundOnIcon.style.display = 'block';
+            soundOffIcon.style.display = 'none';
+        } else {
+            soundOnIcon.style.display = 'none';
+            soundOffIcon.style.display = 'block';
+        }
+    }
+
+    function stopAllAudio() {
+        lightAudio.pause();
+        lightAudio.currentTime = 0;
+        darkAudio.pause();
+        darkAudio.currentTime = 0;
+        currentAudio = null;
+        isPlaying = false;
+    }
+
+    // Only apply effects if cat element exists and screen is large enough
+    if (parallaxCat && window.innerWidth >= 769) {
+        // Parallax effect
+        const movementDivider = 20;
+
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            const translateY = scrollY / movementDivider;
+            parallaxCat.style.transform = `translateY(-${translateY}px)`;
+        });
+
+        // Toggle audio on click
+        parallaxCat.addEventListener('click', function() {
+            if (!soundEnabled) return;
+
+            // If audio is already playing, stop it
+            if (isPlaying) {
+                stopAllAudio();
+                return;
+            }
+
+            // Otherwise play appropriate audio
+            playAppropriateAudio();
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const parallaxCat = document.querySelector('.parallax-cat');
+
+    // Only apply the effect if the cat element exists and the screen is large enough
+    if (parallaxCat && window.innerWidth >= 769) {
+        // Slow down the movement for a subtle effect
+        const movementDivider = 20;
+
+        window.addEventListener('scroll', function() {
+            // Calculate position based on scroll
+            const scrollY = window.scrollY;
+            const translateY = scrollY / movementDivider;
+
+            // Apply transformation with some constraints
+            parallaxCat.style.transform = `translateY(-${translateY}px)`;
+        });
+    }
+});
 // About panel functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Get all elements that should trigger the about panel
@@ -460,48 +583,6 @@ function setupContactForm() {
             }, 1000);
         });
     }
-}
-
-// =====================================
-// EASTER EGGS AND FUN INTERACTIONS
-// =====================================
-function setupEasterEggs() {
-    // Konami code easter egg
-    let konamiCode = [];
-    const konamiSequence = [
-        'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
-        'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
-        'KeyB', 'KeyA'
-    ];
-
-    document.addEventListener('keydown', function(e) {
-        konamiCode.push(e.code);
-
-        if (konamiCode.length > konamiSequence.length) {
-            konamiCode.shift();
-        }
-
-        if (konamiCode.join(',') === konamiSequence.join(',')) {
-            activateEasterEgg();
-            konamiCode = [];
-        }
-    });
-
-    // Click easter egg on logo
-    const logo = document.querySelector('.logo');
-    let clickCount = 0;
-
-    logo.addEventListener('click', function(e) {
-        clickCount++;
-
-        if (clickCount >= 5) {
-            this.style.animation = 'spin 1s ease-in-out';
-            setTimeout(() => {
-                this.style.animation = '';
-            }, 1000);
-            clickCount = 0;
-        }
-    });
 }
 
 function activateEasterEgg() {
