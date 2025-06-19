@@ -721,16 +721,38 @@ footer p {
 		padding: 0 var(--spacing-sm);
 	}
 
-	/* Artwork gallery fixes */
 	.gallery-slide {
 		display: flex;
 		flex-direction: column;
 		height: auto;
-		overflow-y: auto;
+		min-height: fit-content;
+		overflow-y: visible;
 		padding: 15px 0;
 		gap: 20px;
 	}
+	.gallery-container {
+		height: auto;
+		max-height: none;
+		overflow: visible;
+	}
 
+	/* Fix gallery view to remove height restrictions */
+	.gallery-view {
+		overflow: visible;
+		height: auto;
+	}
+
+	/* Allow slides container to expand vertically */
+	.gallery-slides {
+		height: auto;
+	}
+
+	/* Ensure modal content expands properly */
+	.modal-content {
+		max-height: none;
+		overflow-y: visible;
+		padding-bottom: 60px; /* Space for navigation buttons */
+	}
 	.gallery-slide img {
 		width: 100%;
 		max-height: 250px;
@@ -819,6 +841,7 @@ button:focus {
 	}
 }
 
+
 /* Parallax scrolling cat image */
 .parallax-cat {
 	position: fixed;
@@ -844,11 +867,8 @@ button:focus {
 }
 
 /* Only show on larger screens */
-@media screen and (min-width: 769px) {
-	.parallax-cat {
-		display: block;
-	}
-	.pixelbabycat-img {
+@media screen and (min-width: 768px) {
+	.parallax-cat, .pixelbabycat-img, .large-junimo {
 		display: block;
 	}
 }
@@ -1252,6 +1272,26 @@ button:focus {
 		overflow-y: auto;
 	}
 }
+@media screen and (min-width: 1200px) {
+	.parallax-cat {
+		bottom: 50px;
+		left: 80px;
+		width: 150px;
+		height: 150px;
+	}
+
+	.pixelbabycat-img {
+		bottom: 50px;
+		right: 80px;
+		width: 150px;
+		height: 150px;
+	}
+
+	.large-junimo {
+			/* Adjust size for larger screens if needed */
+		}
+	}
+
 
 @media (max-width: 600px) {
 	.modal-content {
@@ -1345,8 +1385,6 @@ button:focus {
 	background: var(--pink-dark);
 	transform: translateY(-50%) scale(1.1);
 }
-
-
 
 .pixelbabycat-img {
 	position: fixed;
