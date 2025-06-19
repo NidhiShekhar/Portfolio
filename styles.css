@@ -600,6 +600,58 @@ footer p {
 		top: 1rem;
 		right: 1rem;
 	}
+
+	.hero {
+		padding: 40px 20px; /* Reduce overall padding */
+		min-height: auto; /* Let content determine height instead of fixed height */
+	}
+
+	.hero h1 {
+		margin-bottom: 15px; /* Reduce space after heading */
+		font-size: 2rem; /* Slightly smaller heading on mobile */
+	}
+
+	.hero p {
+		margin-bottom: 20px; /* Reduce space after paragraph */
+		font-size: 1rem; /* Ensure paragraph text is readable but not too large */
+	}
+
+	.cta-button {
+		margin-top: 15px; /* Less space before button */
+	}
+
+	/* If you have a container div around your text, target that too */
+	.hero-content {
+		gap: 15px; /* If using flexbox with gap */
+	}
+
+	.gallery-slide {
+		height: 350px;
+	}
+
+	.modal-content {
+		width: 95%;
+		padding: var(--spacing-md);
+	}
+
+	#music-gallery-slides .gallery-slide video {
+		max-height: 50vh;
+	}
+
+	.gallery-modal .prev-btn,
+	.gallery-modal .next-btn {
+		width: 40px;
+		height: 40px;
+		font-size: 20px;
+	}
+	.work-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.work-date {
+		margin-top: 0.5rem;
+	}
 }
 
 @media (max-width: 480px) {
@@ -610,21 +662,44 @@ footer p {
 		--spacing-xl: 2.5rem;
 	}
 
+	/* Hero section fixes */
 	.hero {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		text-align: left;
-		padding: var(--spacing-xl);
-		gap: var(--spacing-lg);
+		flex-direction: column;
+		padding: 1.5rem 1rem;
+		text-align: center;
 	}
 
+	.hero h1 {
+		font-size: 1.8rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.hero p {
+		font-size: 0.9rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.cta-button {
+		width: auto;
+		max-width: 90%;
+		margin: 0.5rem auto 0;
+	}
+
+	/* Combine hero-content styles */
 	.hero-content {
 		flex: 1;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
+	/* Combine hero-image styles */
 	.hero-image {
 		flex: 0 0 220px;
+		margin-top: 1rem;
+		width: 100%;
+		max-width: 200px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -644,6 +719,60 @@ footer p {
 
 	.nav-container {
 		padding: 0 var(--spacing-sm);
+	}
+
+	/* Artwork gallery fixes */
+	.gallery-slide {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		overflow-y: auto;
+		padding: 15px 0;
+		gap: 20px;
+	}
+
+	.gallery-slide img {
+		width: 100%;
+		max-height: 250px;
+		margin-bottom: 15px;
+	}
+
+	/* Junimo adjustments */
+	.large-junimo {
+		top: 5px;
+		right: 5px;
+	}
+
+	.large-junimo img {
+		width: 50px;
+		height: 50px;
+	}
+
+	/* Navigation buttons */
+	.prev-btn, .next-btn {
+		width: 30px;
+		height: 30px;
+		font-size: 1rem;
+	}
+
+	/* Keep music gallery as is */
+	#music-gallery-slides .gallery-slide video {
+		max-height: 40vh;
+	}
+
+	.gallery-modal .prev-btn,
+	.gallery-modal .next-btn {
+		width: 36px;
+		height: 36px;
+		font-size: 18px;
+	}
+
+	.gallery-modal .prev-btn {
+		left: 10px;
+	}
+
+	.gallery-modal .next-btn {
+		right: 10px;
 	}
 }
 
@@ -717,6 +846,9 @@ button:focus {
 /* Only show on larger screens */
 @media screen and (min-width: 769px) {
 	.parallax-cat {
+		display: block;
+	}
+	.pixelbabycat-img {
 		display: block;
 	}
 }
@@ -821,69 +953,9 @@ button:focus {
 	height: 30px;
 }
 
-/* Mobile responsiveness fixes for the CTA button */
-@media screen and (max-width: 480px) {
-	.hero {
-		flex-direction: column;
-		padding: 2rem 1rem; /* Add more breathing room */
-		text-align: center;
-	}
 
-	.hero-content {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.hero-image {
-		margin-top: 1rem;
-		width: 100%;
-		max-width: 200px;
-	}
-	.cta-button {
-		/*display: inline-block;*/
-		width: auto;
-		max-width: 90%; /* Ensure button doesn't overflow container */
-		margin: 1rem auto 0;
-	}
 
-	/* Adjust large junimo position on mobile */
-	.large-junimo {
-		top: 5px;
-		right: 5px;
-	}
 
-	.large-junimo img {
-		width: 50px;
-		height: 50px;
-	}
-}
-
-/* Extra small devices */
-@media screen and (max-width: 480px) {
-	.hero h1 {
-		font-size: 1.8rem;
-		margin-bottom: 0.5rem;
-	}
-
-	.hero p {
-		font-size: 0.9rem;
-	}
-}
-
-/* Fix for hero section on small tablets */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-	.hero {
-		padding: 2rem;
-		text-align: center;
-	}
-
-	.cta-button {
-		width: auto;
-		max-width: 90%;
-		margin: 1rem auto 0;
-	}
-}
 
 /* Sound button styling */
 .sound-button {
@@ -951,8 +1023,8 @@ button:focus {
 }
 
 .profile-picture-container {
-	width: 300px;
-	height: 300px;
+	width: 270px;
+	height: 270px;
 	border-radius: 50%;
 	overflow: hidden;
 	margin-bottom: 25px;
@@ -1172,29 +1244,6 @@ button:focus {
 	box-shadow: var(--shadow-sm);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-	.gallery-slide {
-		height: 350px;
-	}
-
-	.modal-content {
-		width: 95%;
-		padding: var(--spacing-md);
-	}
-}
-
-@media (max-width: 480px) {
-	.gallery-slide {
-		height: 250px;
-	}
-
-	.prev-btn, .next-btn {
-		width: 30px;
-		height: 30px;
-		font-size: 1rem;
-	}
-}
 @media (min-width: 1024px) {
 	.modal-content {
 		max-width: 1200px;
@@ -1297,40 +1346,7 @@ button:focus {
 	transform: translateY(-50%) scale(1.1);
 }
 
-/* Ensure responsive design for music gallery */
-@media (max-width: 768px) {
-	#music-gallery-slides .gallery-slide video {
-		max-height: 50vh;
-	}
 
-	.gallery-modal .prev-btn,
-	.gallery-modal .next-btn {
-		width: 40px;
-		height: 40px;
-		font-size: 20px;
-	}
-}
-
-@media (max-width: 480px) {
-	#music-gallery-slides .gallery-slide video {
-		max-height: 40vh;
-	}
-
-	.gallery-modal .prev-btn,
-	.gallery-modal .next-btn {
-		width: 36px;
-		height: 36px;
-		font-size: 18px;
-	}
-
-	.gallery-modal .prev-btn {
-		left: 10px;
-	}
-
-	.gallery-modal .next-btn {
-		right: 10px;
-	}
-}
 
 .pixelbabycat-img {
 	position: fixed;
@@ -1393,16 +1409,7 @@ button:focus {
 	margin-bottom: 0px;
 }
 
-@media (max-width: 768px) {
-	.work-header {
-		flex-direction: column;
-		align-items: flex-start;
-	}
 
-	.work-date {
-		margin-top: 0.5rem;
-	}
-}
 
 .workplace-link {
 	color: var(--pink-dark);

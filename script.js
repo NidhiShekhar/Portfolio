@@ -19,7 +19,96 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Audio functionality for button sounds
+let audioContext;
+let buttonSound;
 
+// Initialize audio on first user interaction
+function initAudio() {
+    if (audioContext) return; // Already initialized
+
+    try {
+        // Create audio context
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        // Load button sound
+        loadButtonSound('button_press.mp3');
+    } catch (e) {
+        console.error('Web Audio API not supported:', e);
+    }
+}
+
+// Load the sound file
+function loadButtonSound(url) {
+    fetch(url)
+        .then(response => response.arrayBuffer())
+        .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+        .then(audioBuffer => {
+            buttonSound = audioBuffer;
+        })
+        .catch(error => console.error('Error loading sound:', error));
+}
+
+// Play button sound
+function playButtonSound() {
+    // Check sound enabled state from the existing sound toggle
+    const soundEnabled = document.getElementById('sound-button').querySelector('.sound-on-icon').style.display !== 'none';
+
+    if (!audioContext || !buttonSound || !soundEnabled) return;
+
+    const source = audioContext.createBufferSource();
+    source.buffer = buttonSound;
+    source.connect(audioContext.destination);
+    source.start(0);
+}
+
+// Add sound to buttons
+function addSoundToButtons() {
+    // About me link
+    const aboutMeLink = document.querySelector('a[href="#about"]');
+    if (aboutMeLink) {
+        aboutMeLink.addEventListener('click', playButtonSound);
+    }
+
+    // ALL "Explore my work" buttons (including the one in hero section)
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', playButtonSound);
+    });
+
+    // Research paper buttons
+    const paperButtons = document.querySelectorAll('.paper-button');
+    paperButtons.forEach(button => {
+        button.addEventListener('click', playButtonSound);
+    });
+
+    // Hobby cards
+    const hobbyCards = document.querySelectorAll('.hobby-card');
+    hobbyCards.forEach(card => {
+        card.addEventListener('click', playButtonSound);
+    });
+
+    // Logo that opens about panel
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', playButtonSound);
+    }
+
+    // Back button in about panel
+    const backArrow = document.querySelector('.back-arrow');
+    if (backArrow) {
+        backArrow.addEventListener('click', playButtonSound);
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // First user interaction will initialize audio
+    document.body.addEventListener('click', initAudio, { once: true });
+
+    // Add sounds to buttons
+    addSoundToButtons();
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const parallaxCat = document.querySelector('.parallax-cat');
