@@ -7,16 +7,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeSwitch = document.getElementById('theme-switch');
 
-    // Check for saved theme preference or use system preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-
-    // Apply saved theme or default to light
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.documentElement.classList.add('dark-mode');
-        themeSwitch.checked = true;
-    }
-
     // Theme switch event handler
     themeSwitch.addEventListener('change', () => {
         if (themeSwitch.checked) {
@@ -28,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
