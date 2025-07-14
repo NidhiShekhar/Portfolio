@@ -32,7 +32,7 @@ function initAudio() {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
         // Load button sound
-        loadButtonSound('button_press.mp3');
+        loadButtonSound('rsc/button_press.mp3');
     } catch (e) {
         console.error('Web Audio API not supported:', e);
     }
