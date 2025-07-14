@@ -113,7 +113,92 @@ document.addEventListener('DOMContentLoaded', () => {
         // Filter out empty titles to avoid extra commas
         titleElement.textContent = artworks[currentSlide].map(a => a.title).filter(Boolean).join(', ');
     }
+// Function to create responsive artwork slides with vertical scrolling
+    function createResponsiveArtworkSlides() {
+        const artworkContainer = document.getElementById('artwork-container');
+        if (!artworkContainer) return;
 
+        const artworkItems = Array.from(artworkContainer.querySelectorAll('.artwork-item'));
+        const slidesContainer = document.getElementById('artwork-slides-container');
+
+        // Clear the slides container
+        slidesContainer.innerHTML = '';
+
+        // Group artworks into slides of 4
+        for (let i = 0; i < artworkItems.length; i += 4) {
+            const slide = document.createElement('div');
+            slide.className = 'artwork-slide';
+
+            // Add the next 4 artworks (or fewer if at the end)
+            const slideArtworks = artworkItems.slice(i, i + 4);
+            slideArtworks.forEach(artwork => {
+                slide.appendChild(artwork.cloneNode(true));
+            });
+
+            slidesContainer.appendChild(slide);
+        }
+
+        // Apply responsive behavior
+        applyResponsiveArtworkLayout();
+
+        // Add resize listener to adjust layout when screen size changes
+        window.addEventListener('resize', applyResponsiveArtworkLayout);
+    }
+
+// Function to apply responsive layout based on screen size
+    function applyResponsiveArtworkLayout() {
+        const slides = document.querySelectorAll('.artwork-slide');
+        const isMobileView = window.innerWidth < 768;
+
+        slides.forEach(slide => {
+            if (isMobileView) {
+                // Enable vertical scrolling on mobile
+                slide.classList.add('vertical-scroll');
+            } else {
+                // Disable vertical scrolling on larger screens
+                slide.classList.remove('vertical-scroll');
+            }
+        });
+    }
+
+// CSS to be added to your stylesheet
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+    .artwork-slide {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 20px;
+    }
+    
+    .artwork-slide.vertical-scroll {
+        flex-direction: column;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+    
+    .artwork-slide .artwork-item {
+        flex: 1 0 25%;
+        padding: 10px;
+    }
+    
+    .artwork-slide.vertical-scroll .artwork-item {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    
+    @media (max-width: 768px) {
+        .artwork-slide {
+            margin-bottom: 30px;
+        }
+    }
+`;
+    document.head.appendChild(styleSheet);
+
+// Initialize the responsive artwork slides when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        createResponsiveArtworkSlides();
+    });
     // Event listeners
     if (fineArtsCard) fineArtsCard.addEventListener('click', openGallery);
     closeBtn.addEventListener('click', closeGallery);
