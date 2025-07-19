@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This is my Stardew Themed Portfolio :)",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.3.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^16.0.0",
+    "reading-time": "^1.5.0"
+  }
+}

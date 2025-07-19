@@ -1,0 +1,438 @@
+/* Blog specific styles based on the NextJS design */
+:root {
+    --bg-primary: #fdf6f0;
+    --text-primary: #5c4033;
+    --pink-light: #e8b7d4;
+    --pink-dark: #9e6286;
+    --pink-medium: #dfa8c3;
+    --card-bg: #fff8f5;
+    --text-secondary: #7c5c5c;
+    --text-muted: #6b4f4f;
+}
+
+.blog-body {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: serif;
+    padding: 0;
+    margin: 0;
+}
+
+.decorative-header {
+    width: 100%;
+    height: 8px;
+    background-color: var(--pink-light);
+    background-opacity: 0.6;
+    border-bottom: 4px dotted var(--pink-medium);
+}
+
+.decorative-footer {
+    width: 100%;
+    height: 8px;
+    background-color: var(--pink-light);
+    background-opacity: 0.6;
+    border-top: 4px dotted var(--pink-medium);
+    margin-top: 3rem;
+}
+
+.blog-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Introduction Section */
+.intro-section {
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+}
+
+.flower-decoration {
+    position: absolute;
+    font-size: 3rem;
+    color: var(--pink-light);
+}
+
+.flower-decoration.left {
+    top: -12px;
+    left: -12px;
+    transform: rotate(12deg);
+}
+
+.flower-decoration.right {
+    top: -8px;
+    right: -8px;
+    transform: rotate(-12deg);
+}
+
+.intro-card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--pink-light);
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-image {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--pink-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro-text h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--pink-dark);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.bio {
+    max-width: 32rem;
+    margin: 0 auto 1.5rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.intro-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.primary-btn {
+    background-color: var(--pink-light);
+    color: #5c3751;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.primary-btn:hover {
+    background-color: var(--pink-medium);
+}
+
+.secondary-btn {
+    border: 2px solid var(--pink-light);
+    color: #5c3751;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.secondary-btn:hover {
+    background-color: #fbeaef;
+}
+
+/* Categories Section */
+.categories-section {
+    margin-bottom: 4rem;
+}
+
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pink-dark);
+    text-align: center;
+    position: relative;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-heading span {
+    padding: 0 1rem;
+    position: relative;
+    background-color: var(--bg-primary);
+}
+
+.section-heading::before,
+.section-heading::after {
+    content: "";
+    height: 2px;
+    flex-grow: 1;
+    background-color: var(--pink-light);
+    margin: 0 1rem;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.category-card {
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    background-color: var(--card-bg);
+    border: 2px solid var(--pink-light);
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.category-card:hover {
+    border-color: var(--pink-medium);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon {
+    font-size: 1.875rem;
+}
+
+.category-card h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+    transition: color 0.3s;
+}
+
+.category-card:hover h3 {
+    color: var(--pink-dark);
+}
+
+.category-card::after {
+    content: "";
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background-color: #fbeaef;
+    border-radius: 50%;
+    right: -2rem;
+    bottom: -2rem;
+    opacity: 0.4;
+}
+
+/* Posts Section */
+.posts-section {
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 2px solid var(--pink-light);
+    transition: all 0.3s;
+}
+
+.post-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    border-color: var(--pink-medium);
+}
+
+.post-image {
+    height: 12rem;
+    background-color: var(--pink-light);
+    opacity: 0.5;
+    position: relative;
+}
+
+.post-category {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--pink-light);
+    color: #5c3751;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+}
+
+.post-content {
+    padding: 1.5rem;
+}
+
+.post-meta {
+    font-size: 0.875rem;
+    color: var(--pink-dark);
+    margin-bottom: 0.5rem;
+}
+
+.post-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    transition: color 0.3s;
+}
+
+.post-card:hover h3 {
+    color: var(--pink-dark);
+}
+
+.post-card p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: var(--pink-dark);
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.read-more span {
+    margin-left: 0.25rem;
+}
+
+/* Footer decoration */
+.footer-decoration {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    color: var(--pink-medium);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Navigation link */
+.nav-link {
+    text-align: center;
+    padding: 1rem;
+}
+
+.nav-link a {
+    color: var(--pink-dark);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-content {
+        flex-direction: column;
+    }
+
+    .section-heading::before,
+    .section-heading::after {
+        width: 2rem;
+    }
+}
+/* Add these styles to blog-styles.css */
+
+/* Category page specific styles */
+.category-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    border: 2px solid var(--pink-light);
+}
+
+.category-icon-large {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.category-header h1 {
+    color: var(--pink-dark);
+    margin-bottom: 0.5rem;
+}
+
+.category-description {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.category-nav {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.back-link {
+    color: var(--pink-dark);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.no-posts {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--card-bg);
+    border: 2px dashed var(--pink-light);
+    border-radius: 1rem;
+    color: var(--text-secondary);
+}

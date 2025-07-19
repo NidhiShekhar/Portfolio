@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "favorite-cafes",
+    "title": "My Favorite Cozy Cafés in Town",
+    "date": "2023-05-15",
+    "category": "Food",
+    "excerpt": "Discover the hidden gems where you can enjoy a warm cup of tea and delicious pastries on a rainy afternoon.",
+    "readingTime": "5 min read"
+  },
+  {
+    "slug": "stardew-valley-comfort",
+    "title": "Why Stardew Valley Remains My Comfort Game",
+    "date": "2023-05-10",
+    "category": "Video Games",
+    "excerpt": "A look at how this charming farming simulator creates the perfect cozy gaming experience year after year.",
+    "readingTime": "8 min read"
+  }
+]
