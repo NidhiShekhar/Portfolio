@@ -272,6 +272,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// ...existing code...
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.collapsible-header').forEach(header => {
+    header.addEventListener('click', function () {
+      const content = header.nextElementSibling;
+      const expanded = header.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', !expanded);
+      if (expanded) {
+        content.hidden = true;
+        header.querySelector('.collapsible-icon').textContent = '+';
+      } else {
+        content.hidden = false;
+        header.querySelector('.collapsible-icon').textContent = '–';
+      }
+    });
+  });
+});
+// ...existing code...
 // =====================================
 // MAIN INITIALIZATION FUNCTION
 // =====================================

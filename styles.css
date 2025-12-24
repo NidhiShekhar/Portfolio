@@ -137,7 +137,8 @@ body {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.sun, .moon {
+.sun,
+.moon {
 	font-size: 16px;
 	line-height: 1;
 	z-index: 1;
@@ -151,7 +152,7 @@ body {
 	margin-right: 4px;
 }
 
-.theme-switch:checked + .theme-switch-label .toggle-circle {
+.theme-switch:checked+.theme-switch-label .toggle-circle {
 	transform: translateX(30px);
 }
 
@@ -185,9 +186,12 @@ body {
 }
 
 @keyframes float {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: translateY(0px) rotate(0deg);
 	}
+
 	50% {
 		transform: translateY(-20px) rotate(5deg);
 	}
@@ -202,7 +206,8 @@ nav {
 	width: 100%;
 	background: var(--bg-nav);
 	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px); /* Safari support */
+	-webkit-backdrop-filter: blur(10px);
+	/* Safari support */
 	padding: var(--spacing-sm) var(--spacing-md);
 	z-index: 100;
 	border-bottom: 3px solid var(--pink-medium);
@@ -461,6 +466,7 @@ main {
 	background: linear-gradient(135deg, var(--pink-medium) 0%, var(--purple-dark) 100%);
 	color: white;
 }
+
 /* =====================================
    HOBBIES SECTION
    ===================================== */
@@ -561,9 +567,11 @@ footer {
 	padding: var(--spacing-md);
 	margin-top: var(--spacing-xl);
 }
+
 /* Add this rule to fix the footer text color in dark mode */
 .dark-mode footer {
-	color: var(--pink-soft); /* This sets the text to a darker color in dark mode */
+	color: var(--pink-soft);
+	/* This sets the text to a darker color in dark mode */
 }
 
 footer p {
@@ -602,27 +610,35 @@ footer p {
 	}
 
 	.hero {
-		padding: 40px 20px; /* Reduce overall padding */
-		min-height: auto; /* Let content determine height instead of fixed height */
+		padding: 40px 20px;
+		/* Reduce overall padding */
+		min-height: auto;
+		/* Let content determine height instead of fixed height */
 	}
 
 	.hero h1 {
-		margin-bottom: 15px; /* Reduce space after heading */
-		font-size: 2rem; /* Slightly smaller heading on mobile */
+		margin-bottom: 15px;
+		/* Reduce space after heading */
+		font-size: 2rem;
+		/* Slightly smaller heading on mobile */
 	}
 
 	.hero p {
-		margin-bottom: 20px; /* Reduce space after paragraph */
-		font-size: 1rem; /* Ensure paragraph text is readable but not too large */
+		margin-bottom: 20px;
+		/* Reduce space after paragraph */
+		font-size: 1rem;
+		/* Ensure paragraph text is readable but not too large */
 	}
 
 	.cta-button {
-		margin-top: 15px; /* Less space before button */
+		margin-top: 15px;
+		/* Less space before button */
 	}
 
 	/* If you have a container div around your text, target that too */
 	.hero-content {
-		gap: 15px; /* If using flexbox with gap */
+		gap: 15px;
+		/* If using flexbox with gap */
 	}
 
 	.gallery-slide {
@@ -644,6 +660,7 @@ footer p {
 		height: 40px;
 		font-size: 20px;
 	}
+
 	.work-header {
 		flex-direction: column;
 		align-items: flex-start;
@@ -652,6 +669,7 @@ footer p {
 	.work-date {
 		margin-top: 0.5rem;
 	}
+
 }
 
 @media (max-width: 480px) {
@@ -729,8 +747,10 @@ footer p {
 		min-width: 100%;
 		align-items: center;
 		justify-items: center;
-		padding: 20px; /* Add padding inside the slide */
-		box-sizing: border-box; /* Ensure padding doesn't expand slide size */
+		padding: 20px;
+		/* Add padding inside the slide */
+		box-sizing: border-box;
+		/* Ensure padding doesn't expand slide size */
 	}
 
 	.gallery-container {
@@ -754,12 +774,16 @@ footer p {
 	.modal-content {
 		max-height: none;
 		overflow-y: visible;
-		padding-bottom: 60px; /* Space for navigation buttons */
+		padding-bottom: 60px;
+		/* Space for navigation buttons */
 	}
+
 	.gallery-slide img {
 		width: 100%;
-		height: auto; /* Change to auto to maintain aspect ratio */
-		max-height: 300px; /* Limit maximum height */
+		height: auto;
+		/* Change to auto to maintain aspect ratio */
+		max-height: 300px;
+		/* Limit maximum height */
 		object-fit: contain;
 		border-radius: var(--radius-sm);
 		box-shadow: var(--shadow-md);
@@ -772,7 +796,8 @@ footer p {
 	}
 
 	/* Navigation buttons */
-	.prev-btn, .next-btn {
+	.prev-btn,
+	.next-btn {
 		width: 30px;
 		height: 30px;
 		font-size: 1rem;
@@ -797,10 +822,12 @@ footer p {
 	.gallery-modal .next-btn {
 		right: 10px;
 	}
+
 	.parallax-cat,
 	.pixelbabycat-img,
 	.large-junimo {
-		display: none !important; /* Use !important to override any other display rules */
+		display: none !important;
+		/* Use !important to override any other display rules */
 	}
 }
 
@@ -808,6 +835,7 @@ footer p {
    ACCESSIBILITY IMPROVEMENTS
    ===================================== */
 @media (prefers-reduced-motion: reduce) {
+
 	*,
 	*::before,
 	*::after {
@@ -858,7 +886,7 @@ button:focus {
 	height: 130px;
 	transition: transform 3s ease-out;
 	display: none;
-	cursor : pointer;
+	cursor: pointer;
 }
 
 .parallax-cat img {
@@ -869,12 +897,16 @@ button:focus {
 }
 
 .parallax-cat:hover img {
-	transform: scale(1.1); /* Slightly increase size on hover */
+	transform: scale(1.1);
+	/* Slightly increase size on hover */
 }
 
 /* Only show on larger screens */
 @media screen and (min-width: 768px) {
-	.parallax-cat, .pixelbabycat-img, .large-junimo {
+
+	.parallax-cat,
+	.pixelbabycat-img,
+	.large-junimo {
 		display: block !important;
 	}
 }
@@ -923,9 +955,12 @@ button:focus {
 
 
 @keyframes bounce {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: translateY(0) rotate(0deg);
 	}
+
 	50% {
 		transform: translateY(-10px) rotate(5deg);
 	}
@@ -943,12 +978,15 @@ button:focus {
 		transform: translateY(-50px) rotate(0deg);
 		opacity: 0;
 	}
+
 	10% {
 		opacity: 0.7;
 	}
+
 	90% {
 		opacity: 0.7;
 	}
+
 	100% {
 		transform: translateY(calc(100vh + 50px)) rotate(360deg);
 		opacity: 0;
@@ -956,12 +994,29 @@ button:focus {
 }
 
 /* Make Junimos visible near the hero section */
-.junimo-left:nth-child(1) { left: 5%; }
-.junimo-left:nth-child(2) { left: 8%; }
-.junimo-left:nth-child(3) { left: 3%; }
-.junimo-right:nth-child(4) { right: 5%; }
-.junimo-right:nth-child(5) { right: 8%; }
-.junimo-right:nth-child(6) { right: 3%; }
+.junimo-left:nth-child(1) {
+	left: 5%;
+}
+
+.junimo-left:nth-child(2) {
+	left: 8%;
+}
+
+.junimo-left:nth-child(3) {
+	left: 3%;
+}
+
+.junimo-right:nth-child(4) {
+	right: 5%;
+}
+
+.junimo-right:nth-child(5) {
+	right: 8%;
+}
+
+.junimo-right:nth-child(6) {
+	right: 3%;
+}
 
 /* Add support for dark mode */
 .dark-mode .junimo {
@@ -974,6 +1029,7 @@ button:focus {
 		display: none;
 	}
 }
+
 .junimo img {
 	width: 30px;
 	height: 30px;
@@ -1007,10 +1063,12 @@ button:focus {
 .about-panel {
 	position: fixed;
 	top: 0;
-	left: -350px; /* Start off-screen */
+	left: -350px;
+	/* Start off-screen */
 	width: 350px;
 	height: 100vh;
-	background-color: rgba(253, 242, 248, 0.9); /* Light pink with transparency */
+	background-color: rgba(253, 242, 248, 0.9);
+	/* Light pink with transparency */
 	z-index: 1000;
 	transition: transform var(--transition-normal);
 	box-shadow: var(--shadow-lg);
@@ -1018,7 +1076,8 @@ button:focus {
 }
 
 .dark-mode .about-panel {
-	background-color: rgba(46, 26, 41, 0.9); /* Dark mode background */
+	background-color: rgba(46, 26, 41, 0.9);
+	/* Dark mode background */
 }
 
 .about-panel.active {
@@ -1196,7 +1255,8 @@ button:focus {
 	overflow-y: auto;
 }
 
-.prev-btn, .next-btn {
+.prev-btn,
+.next-btn {
 	background: var(--pink-medium);
 	color: white;
 	border: none;
@@ -1211,7 +1271,8 @@ button:focus {
 	transition: var(--transition-fast);
 }
 
-.prev-btn:hover, .next-btn:hover {
+.prev-btn:hover,
+.next-btn:hover {
 	background: var(--pink-dark);
 	transform: scale(1.1);
 }
@@ -1252,7 +1313,8 @@ button:focus {
 .gallery-slide video {
 	width: 100%;
 	height: 100%;
-	object-fit: contain; /* Ensures the whole video is visible */
+	object-fit: contain;
+	/* Ensures the whole video is visible */
 	border-radius: var(--radius-sm);
 }
 
@@ -1278,6 +1340,7 @@ button:focus {
 		overflow-y: auto;
 	}
 }
+
 @media screen and (min-width: 1200px) {
 	.parallax-cat {
 		bottom: 10px;
@@ -1293,10 +1356,8 @@ button:focus {
 		height: 150px;
 	}
 
-	.large-junimo {
-			/* Adjust size for larger screens if needed */
-		}
-	}
+	
+}
 
 
 @media (max-width: 600px) {
@@ -1305,17 +1366,21 @@ button:focus {
 		max-width: 100vw;
 		max-height: 100vh;
 	}
+
 	.gallery-slide {
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(4, 1fr);
 		gap: 8px;
 		padding: 4px 0;
 	}
+
 	.gallery-slide img {
 		max-width: 95vw;
 		height: auto;
 	}
-	.prev-btn, .next-btn {
+
+	.prev-btn,
+	.next-btn {
 		font-size: 1.5rem;
 		top: unset;
 		bottom: 12px;
@@ -1324,8 +1389,14 @@ button:focus {
 		box-shadow: none;
 		background: #eee;
 	}
-	.prev-btn { left: 20%; }
-	.next-btn { right: 20%; }
+
+	.prev-btn {
+		left: 20%;
+	}
+
+	.next-btn {
+		right: 20%;
+	}
 }
 
 /* =====================================
@@ -1341,7 +1412,8 @@ button:focus {
 /* For music gallery, we want only one video per slide */
 #music-gallery-slides .gallery-slide {
 	display: flex;
-	flex-direction: column; /* Changed to column to stack elements vertically */
+	flex-direction: column;
+	/* Changed to column to stack elements vertically */
 	align-items: center;
 	justify-content: center;
 	min-width: 100%;
@@ -1399,15 +1471,18 @@ button:focus {
 	z-index: 50;
 	width: 130px;
 	height: 130px;
-	background: transparent; /* subtle light background */
+	background: transparent;
+	/* subtle light background */
 	border-radius: 0px;
 	transition: box-shadow 0.2s, background 0.2s;
 }
 
 /* Updated to use the .dark-mode class */
 .dark-mode .pixelbabycat-img {
-	background: rgba(255, 255, 255, 0.15); /* Subtle light background for dark mode */
-	box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18); /* Soft outline for dark mode */
+	background: rgba(255, 255, 255, 0.15);
+	/* Subtle light background for dark mode */
+	box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18);
+	/* Soft outline for dark mode */
 }
 
 .work-experience-container {
@@ -1475,6 +1550,118 @@ button:focus {
 	flex-direction: column;
 	align-items: flex-start;
 }
+
+.work-project {
+    background: var(--pink-light);
+    border-radius: 12px;
+    border: none /*1.5px solid var(--pink-light)*/;
+    margin-bottom: 1.2rem;
+    padding: 1.1rem 1.3rem 1.1rem 1.3rem;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.04);
+    transition: box-shadow 0.2s;
+}
+
+.work-project:last-child {
+    margin-bottom: 0;
+}
+
+.dark-mode .work-project {
+    background: var(--bg-secondary);
+    border-color: var(--pink-medium);
+}
+
+.work-project h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--pink-dark);
+    font-size: 1.13rem;
+    font-weight: 700;
+}
+
+.work-tools {
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.work-bullets {
+    margin: 0.5rem 0 0 1.1rem;
+    padding-left: 1.1rem;
+    list-style: disc inside;
+}
+
+.work-bullets li {
+    margin-bottom: 0.35rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--text-primary);
+    position: relative;
+    padding-left: 0.2em;
+}
+
+.work-bullets li::marker {
+    color: var(--pink-medium);
+    font-size: 1.1em;
+}
+
+.dark-mode .work-bullets li {
+    color: var(--text-primary);
+}
+
+.dark-mode .work-bullets li::marker {
+    color: var(--pink-dark);
+}
+/* ...existing code... */
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none !important;
+  border: none !important;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  margin-bottom: 0.3rem;
+  transition: color 0.2s;
+  box-shadow: none !important;
+}
+
+.collapsible-header h4 {
+  margin: 0;
+  font-size: 1.13rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: left;
+}
+/* Remove focus outline from collapsible-header button */
+.collapsible-header:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.collapsible-icon {
+  font-size: 1.3em;
+  margin-left: 0.5em;
+  transition: transform 0.2s;
+}
+
+.collapsible[open] .collapsible-icon,
+.collapsible-header[aria-expanded="true"] .collapsible-icon {
+  transform: rotate(45deg);
+}
+
+.collapsible-content {
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* ...existing code... */
 /* Photography Gallery Styles - Masonry Layout */
 #photography-modal {
 	display: none;
@@ -1499,13 +1686,15 @@ button:focus {
 }
 
 #photography-gallery-grid {
-	column-count: 4; /* 4 columns on desktop */
+	column-count: 4;
+	/* 4 columns on desktop */
 	column-gap: 10px;
 	padding: 0 4px;
 }
 
 .photo-item {
-	break-inside: avoid; /* Prevents images from breaking across columns */
+	break-inside: avoid;
+	/* Prevents images from breaking across columns */
 	margin-bottom: 10px;
 	position: relative;
 	overflow: hidden;

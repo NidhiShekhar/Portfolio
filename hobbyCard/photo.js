@@ -29,6 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
         { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/photography/eye/eye5.jpg'},
         { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/photography/water/water1.jpg' },
         { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/photography/flower/flower1.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/avatar.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/back.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/cow.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/flower.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/ghibli.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/ghibli2.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/hotel.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/lake.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/landscape.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/rose.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/sky.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/top.jpeg' },
+        { url: 'https://ziffbxnacyimlxjtpsae.supabase.co/storage/v1/object/public/munnar/toy.jpeg' },
+        
+
+
+
 
         // Add more photos as needed
     ];
