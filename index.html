@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nidhi Shekhar - Computer Science Engineer </title>
+    <title>Nidhi Shekhar's Portfolio</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="rsc/flowerT.png">
 
     <!-- Normalize CSS for cross-browser consistency -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -458,15 +460,16 @@
                         <h3>Comparative Analysis of Machine Learning Algorithms for Binary Classification of Tea Leaf
                             Diseases</h3>
                         <div class="paper-button-container">
-                            <a href="https://ieeexplore.ieee.org/document/10958988" class="paper-button">Read Research
-                                Paper 📄</a>
+                            <a href="https://ieeexplore.ieee.org/document/10958988" class="paper-button">Read More</a>
                         </div>
                     </div>
                     <div class="card research-card" id="research-card-2">
-                        <h3>Quantifying Modality Contributions by Disentangling Multimodal Representations</h3>
+                        <h3>Quantifying Modality Contributions by Disentangling Multimodal Representations
+                            <br><em>(Pre-Print available on ArXiv)</em>
+                        </h3>
+
                         <div class="paper-button-container">
-                            <a href="http://arxiv.org/abs/2511.19470" class="paper-button">Read Research
-                                Paper 📄</a>
+                            <a href="http://arxiv.org/abs/2511.19470" class="paper-button">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -609,6 +612,17 @@
         </div>
     </div>
 
+    <!-- Research Modal -->
+    <div id="research-modal" class="gallery-modal" style="display:none;">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="gallery-title" id="research-modal-title"></h2>
+            <div id="research-modal-details"></div>
+            <div class="paper-button-container">
+                <a id="research-modal-link" class="paper-button" target="_blank">Read Full Paper 📄</a>
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
     <footer>
         <p>Inspired by my favourite farm simulation - Stardew Valley !</p>
@@ -632,6 +646,7 @@
     <script src="hobbyCard/artworks.js"></script>
     <script src="hobbyCard/music.js"></script>
     <script src="hobbyCard/photo.js"></script>
+    <script src="research.js"></script>
 </body>
 
 </html>
