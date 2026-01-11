@@ -468,41 +468,48 @@ main {
 }
 
 .research-modal-content {
-  padding: 1.5em;
-  font-family: 'Nunito', sans-serif;
-  color: #222;
-  background: #fff;
-  border-radius: 12px;
-  max-width: 1000px;
-  margin: 0 auto;
+	padding: 1.5em;
+	font-family: 'Nunito', sans-serif;
+	color: #222;
+	background: #fff;
+	border-radius: 12px;
+	max-width: 1000px;
+	margin: 0 auto;
 }
+
 .research-modal-header {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
+
 .research-modal-abstract h2 {
-  margin-top: 0;
+	margin-top: 0;
 }
+
 .research-modal-figure {
-  text-align: center;
+	text-align: center;
 }
+
 .figure-caption {
-  font-size: 0.95em;
-  color: #555;
-  margin-top: 0.5em;
+	font-size: 0.95em;
+	color: #555;
+	margin-top: 0.5em;
 }
+
 .research-modal-summary h4 {
-  margin-bottom: 0.5em;
+	margin-bottom: 0.5em;
 }
+
 .research-modal-summary ul {
-  margin: 0 0 0 1.2em;
-  padding: 0;
+	margin: 0 0 0 1.2em;
+	padding: 0;
 }
+
 @media (max-width: 700px) {
-  .research-modal-content {
-    padding: 0.5em;
-    max-width: 98vw;
-  }
+	.research-modal-content {
+		padding: 0.5em;
+		max-width: 98vw;
+	}
 }
 
 /* =====================================
@@ -708,6 +715,28 @@ footer p {
 		margin-top: 0.5rem;
 	}
 
+	/* --- Fix bullet alignment for desktop --- */
+	.work-bullets {
+		margin: 0.5rem 0 0 1.5rem;
+		/* or 1.25rem, adjust as needed */
+		padding-left: 0;
+		/* Remove padding */
+		list-style: disc outside;
+		/* Use outside bullets */
+	}
+
+	.work-bullets li {
+		padding-left: 0;
+		/* Remove extra padding */
+		text-indent: 0;
+		/* No text indent */
+		margin-bottom: 0.35rem;
+		line-height: 1.6;
+		font-size: 1rem;
+		color: var(--text-primary);
+		position: relative;
+	}
+
 }
 
 @media (max-width: 480px) {
@@ -866,6 +895,28 @@ footer p {
 	.large-junimo {
 		display: none !important;
 		/* Use !important to override any other display rules */
+	}
+
+	/* --- Fix bullet alignment for desktop --- */
+	.work-bullets {
+		margin: 0.5rem 0 0 1.5rem;
+		/* or 1.25rem, adjust as needed */
+		padding-left: 0;
+		/* Remove padding */
+		list-style: disc outside;
+		/* Use outside bullets */
+	}
+
+	.work-bullets li {
+		padding-left: 0;
+		/* Remove extra padding */
+		text-indent: 0;
+		/* No text indent */
+		margin-bottom: 0.35rem;
+		line-height: 1.6;
+		font-size: 1rem;
+		color: var(--text-primary);
+		position: relative;
 	}
 }
 
@@ -1377,6 +1428,7 @@ button:focus {
 		max-height: 90vh;
 		overflow-y: auto;
 	}
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -1394,7 +1446,7 @@ button:focus {
 		height: 150px;
 	}
 
-	
+
 }
 
 
@@ -1434,6 +1486,58 @@ button:focus {
 
 	.next-btn {
 		right: 20%;
+	}
+
+	.section {
+		padding: 1rem 0.5rem;
+	}
+
+	.container {
+		padding: 0 0.5rem;
+	}
+
+	.work-card,
+	.card {
+		padding: 1rem 0.7rem;
+		margin: 0.5rem 0;
+	}
+
+	.work-card,
+	.card {
+		max-width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		border-radius: 10px;
+	}
+
+	body {
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+
+	.work-bullets {
+		margin-left: 0 !important;
+		padding-left: 0 !important;
+		list-style-position: inside;
+	}
+
+	.work-bullets li {
+		padding-left: 0 !important;
+		text-indent: 0 !important;
+	}
+
+	.work-header h3,
+	.card h3 {
+		font-size: 1.1rem;
+		margin-bottom: 0.5em;
+		word-break: break-word;
+	}
+
+	.work-tools {
+		font-size: 0.95rem;
+		display: block;
+		margin-bottom: 0.5em;
+		word-break: break-word;
 	}
 }
 
@@ -1590,115 +1694,133 @@ button:focus {
 }
 
 .work-project {
-    background: var(--pink-light);
-    border-radius: 12px;
-    border: none /*1.5px solid var(--pink-light)*/;
-    margin-bottom: 1.2rem;
-    padding: 1.1rem 1.3rem 1.1rem 1.3rem;
-    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.04);
-    transition: box-shadow 0.2s;
+	background: var(--pink-light);
+	border-radius: 12px;
+	border: none
+		/*1.5px solid var(--pink-light)*/
+	;
+	margin-bottom: 1.2rem;
+	padding: 1.1rem 1.3rem 1.1rem 1.3rem;
+	box-shadow: 0 2px 8px rgba(236, 72, 153, 0.04);
+	transition: box-shadow 0.2s;
 }
 
 .work-project:last-child {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .dark-mode .work-project {
-    background: var(--bg-secondary);
-    border-color: var(--pink-medium);
+	background: var(--bg-secondary);
+	border-color: var(--pink-medium);
 }
 
 .work-project h4 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: var(--pink-dark);
-    font-size: 1.13rem;
-    font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	color: var(--pink-dark);
+	font-size: 1.13rem;
+	font-weight: 700;
 }
 
 .work-tools {
-    font-size: 0.97rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    font-style: italic;
+	font-size: 0.97rem;
+	color: var(--text-secondary);
+	margin-bottom: 0.5rem;
+	font-style: italic;
 }
 
+/* --- Fix bullet alignment for desktop --- */
 .work-bullets {
-    margin: 0.5rem 0 0 1.1rem;
-    padding-left: 1.1rem;
-    list-style: disc inside;
+	margin: 0.5rem 0 0 1.5rem;
+	/* or 1.25rem, adjust as needed */
+	padding-left: 0;
+	/* Remove padding */
+	list-style: disc outside;
+	/* Use outside bullets */
 }
 
 .work-bullets li {
-    margin-bottom: 0.35rem;
-    line-height: 1.6;
-    font-size: 1rem;
-    color: var(--text-primary);
-    position: relative;
-    padding-left: 0.2em;
+	padding-left: 0;
+	/* Remove extra padding */
+	text-indent: 0;
+	/* No text indent */
+	margin-bottom: 0.35rem;
+	line-height: 1.6;
+	font-size: 1rem;
+	color: var(--text-primary);
+	position: relative;
 }
 
 .work-bullets li::marker {
-    color: var(--pink-medium);
-    font-size: 1.1em;
+	color: var(--pink-medium);
+	font-size: 1.1em;
 }
 
 .dark-mode .work-bullets li {
-    color: var(--text-primary);
+	color: var(--text-primary);
 }
 
 .dark-mode .work-bullets li::marker {
-    color: var(--pink-dark);
+	color: var(--pink-dark);
 }
+
 /* ...existing code... */
 .collapsible-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  background: none !important;
-  border: none !important;
-  outline: none;
-  cursor: pointer;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  margin-bottom: 0.3rem;
-  transition: color 0.2s;
-  box-shadow: none !important;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	background: none !important;
+	border: none !important;
+	outline: none;
+	cursor: pointer;
+	padding: 0;
+	font: inherit;
+	color: inherit;
+	margin-bottom: 0.3rem;
+	transition: color 0.2s;
+	box-shadow: none !important;
 }
 
 .collapsible-header h4 {
-  margin: 0;
-  font-size: 1.13rem;
-  font-weight: 700;
-  flex: 1;
-  text-align: left;
+	margin: 0;
+	font-size: 1.13rem;
+	font-weight: 700;
+	flex: 1;
+	text-align: left;
 }
+
 /* Remove focus outline from collapsible-header button */
 .collapsible-header:focus {
-    outline: none !important;
-    box-shadow: none !important;
+	outline: none !important;
+	box-shadow: none !important;
 }
+
 .collapsible-icon {
-  font-size: 1.3em;
-  margin-left: 0.5em;
-  transition: transform 0.2s;
+	font-size: 1.3em;
+	margin-left: 0.5em;
+	transition: transform 0.2s;
 }
 
 .collapsible[open] .collapsible-icon,
 .collapsible-header[aria-expanded="true"] .collapsible-icon {
-  transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .collapsible-content {
-  animation: fadeIn 0.2s;
+	animation: fadeIn 0.2s;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
+
 /* ...existing code... */
 /* Photography Gallery Styles - Masonry Layout */
 #photography-modal {
